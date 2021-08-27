@@ -1,0 +1,57 @@
+@import 'base', 'utilities';
+
+.home{
+    height: 100vh;
+    background-color: $primary-color-op;
+    @include flexCenter(column, space-evenly);
+    padding-top: 104px;
+
+    .home-txt{
+        @include flexCenter(column, center);
+
+        h1{
+            color: $primary-color;
+            font-size: 2rem;
+            line-height: 2rem;
+            text-align: center;
+    
+            span{
+                display: block;
+                font-size: 1rem;
+                color: $black;
+            }
+        }
+    
+    
+        .cta-btn{
+            color: #fff;
+            text-transform: uppercase;
+            border: none;
+            background-color: $primary-color;
+            border-radius: 8px;
+            padding: .5rem 1rem;
+            margin-top: .5rem;
+        }
+    }
+
+    .home-img{
+        width: 100%;
+        height: 50vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .dog-home{            
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            
+        }
+
+        .blobs-home{
+            width: 90%;
+            height: 90%;
+        }
+    }
+}

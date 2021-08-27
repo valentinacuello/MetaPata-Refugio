@@ -1,0 +1,30 @@
+@mixin flexCenter(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexSpaceBetween(){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin alignItemCenter(){
+    display: flex;
+    align-items: center;
+
+}
+
+@mixin flexCenter($direction, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: $justify;
+}
+
+@mixin desktop() {
+    @media (min-width: 1024px){
+        @content
+    }
+}
