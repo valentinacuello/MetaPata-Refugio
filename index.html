@@ -27,34 +27,92 @@
                 <span class="burger-menu" id="burgerMenu"></span>
             </button>
             <ul class="nav-links">
-                <li><a href="#">Inicio</a></li>
-                <li>Nosotros</li>
+                <li><a href="#" class="actual-link">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="adopciones.html">Adopciones</a></li>
                 <li>Apadrinar</li>
-                <li><a href="donacion.html">Donar</a></li>
+                <li><a href="donar.html">Donar</a></li>
                 <li>Contacto</li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="home">
+        <section class="home-section">
             <div class="home-txt">
                 <h1>
                     <span>Los amigos no se compran</span>
                     Adoptar salva y cambia vidas
                 </h1>
-                <h4>¡Ayudanos a ayudarlos!</h4>
+                <h4>¡Encontrá a tu próximo mejor amigo!</h4>
                 <button class="cta-btn" id="ctaBtn">¡Quiero adoptar!</button>
             </div>
-            <div class="home-img">
-                <img src="/img/hero-img.png" class="dog-home">
-                <img src="/img/home-blobs.png" class="blobs-home">
             </div>
-        </section>        
+        </section>   
+        <section class="about-section" id="#nosotros">
+            <div class="header">
+                <h3>¿Qué es MetaPata Refugio?</h3>
+                <img src="img/seperador.svg"  class="separador">
+            </div>
+            <div class="about">
+                <p>Somos un asociación civil uruguaya sin fines de lucro. Llevamos más de 10 años ayudando a animales que se encuentran en situaciones críticas de abandono, rescatándolos, cuidándolos y brindándoles toda la atención necesaria para poder recuperarse y prepararlos para buscar el hogar definitivo que todos se merecen. MetaPata no recibe ningún tipo de subvención pública, sustentándose únicamente con los aportes y donaciones de personas que quieren colaborar y ayudarnos a ayudar a todos los animales que tenemos a cargo. A día de hoy son 120 en el refugio y +500 animales que ya han encontrado hogar.</p>
+            </div>
+            <div class="mision">
+                <div class="rescatar">
+                    <h5>Rescatamos</h5>
+                    <img src="img/About/about-3.png">
+                    <p>A nuestro refugio llegan animales que han vivido situaciones muy duras las cuales no solo afectan lo físico, sino también lo emocional.</p>
+                </div>
+                <div class="curar">
+                    <h5>Curamos</h5>
+                    <img src="img/About/about-2.png">
+                    <p>Nosotros nos encargamos de curarlos. De curar sus heridas físicas y emocionales para que vuelvan a confiar y a creer.</p>
+                </div>
+                <div class="hogar">
+                    <h5>Buscamos hogar</h5>
+                    <img src="img/About/about-1.png">
+                    <p>Cuando ya se encuentran listos, nos encargamos de buscarles el mejor hogar para que puedan vivir allí con la calidad de vida que se merecen.</p>
+                </div>
+            </div>
+        </section> 
+        <section class="ayuda-section">
+            <div class="header">
+                <h3>¿Cómo ayudarnos?</h3>
+                <img src="img/seperador.svg"  class="separador">
+                <p>Siempre hay una manera. Si te gustaría ayudarnos a mejorar la calidad de vida de nuestros 120 animales, podés elegir una de las siguientes formas:</p>
+            </div>
+            <div class="formas-ayuda">
+                <div class="donacion">
+                    <img src="img/donacion-icon.png">
+                    <h5>Donaciones</h5>
+                    <p>Las donaciones son nuestro sustento y lo que nos ayuda a que el refugio pueda seguir funcionando.</p>
+                    <button class="masInfo" type="button">Más información</button>
+                </div>
+                <div class="apadrinar">
+                    <img src="img/apadrinar-icon.png">
+                    <h5>Apadrinar</h5>
+                    <p>Si quieres ayudar a alguno de nuestros animales pero no puedes adoptarlo, ¡apadrinar es la opción para ti!</p>
+                    <button class="masInfo" type="button">Más información</button>
+                </div>
+            </div>
+        </section>    
     </main>
     <footer>
-        <p>©2021 · Valentina Cuello</p>
+        <img src="img/logo-white.svg" alt="Logo de MetaPata Refugio" class="logo-wh">
+        <ul class="links">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Adopciones</a></li>
+            <li><a href="#">Apadrinar</a></li>
+            <li><a href="#">Donar</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+        <ul class="info">
+            <li><p><i class="bi bi-pin-map"></i> San José, Uruguay</p></li>
+            <li><p><i class="bi bi-envelope"></i> contacto@mprefugio.org.uy</p></li>
+            <li><p><i class="bi bi-facebook"></i> <i class="bi bi-instagram"></i> @metapatarefugio.uy</p></li>
+        </ul>
     </footer>
+    
     <script src="js/index.js"></script>
 </body>
 

@@ -4067,3 +4067,7 @@ node_modules/yargs-parser/build/lib/string-utils.js
 node_modules/yargs-parser/build/lib/tokenize-arg-string.js
 node_modules/yargs-parser/build/lib/yargs-parser-types.js
 node_modules/yargs-parser/build/lib/yargs-parser.js
+node_modules/swup
+node_modules/delegate
+node_modules/opencollective-postinstall
+node_modules/.bin

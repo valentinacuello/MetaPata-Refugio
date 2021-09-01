@@ -13,11 +13,19 @@ nav{
     position: fixed;
     z-index: 1;
 
+    @include desktop(){
+        padding: 0 10rem;
+    }
+
     .logo{
         height: 50%;
 
         img{
             height: 100%;
+        }
+
+        @include desktop(){
+            height: 70%;
         }
     }
 
@@ -28,6 +36,10 @@ nav{
         border: none;
         position: relative;
 
+        @include desktop(){
+            display: none;
+        }
+
 
         .burger-menu,
         .burger-menu::before, .burger-menu::after{
@@ -35,7 +47,7 @@ nav{
             height: 3px;
             display: block;
             background-color: $primary-color;
-            transition: transform .2s ease-in-out opacity;
+            transition: transform .2s ease-in-out;
         }
 
 
@@ -79,8 +91,51 @@ nav{
         transform: translateX(100%);
         transition:  transform .3s cubic-bezier(0.39, 0.575, 0.565, 1);
 
+        
+        @include desktop(){
+            width: 40vw;
+            @include flexCenter(row, space-between);
+            transform: none;
+            height: inherit;
+            position: relative;
+            top: inherit;
+            box-shadow: none;
+            margin-bottom: inherit;
+        }
+
         a{
             color: inherit;
+            text-decoration: none;
+
+            @include desktop(){
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 0%;
+                    height: 2px;
+                    background-color: $secondary-color;
+                }
+
+                
+                &:hover::after{
+                    width: 100%;
+                    transition: width .2s ease;
+
+                }
+                
+            }          
+
+        }        
+        .actual-link{
+            font-weight: 600;
+        
+            &::after{
+                content: '';
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: $secondary-color;
+            }
         }
     }
 

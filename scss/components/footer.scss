@@ -1,0 +1,63 @@
+@import 'base';
+@import 'utilities';
+
+footer{
+    background: url('../img/footer.svg') center no-repeat;
+    background-size: cover;
+    @include flexCenter(column, center);
+    padding: 1rem 0;
+    margin-top: 2rem;
+
+    .logo-wh{
+        width: 110px;
+        margin-top: 3rem;
+    }
+
+    .links{
+        margin: 1rem 0;
+
+        li{
+            list-style: none;
+            text-align: center;
+
+            a{
+                text-decoration: none;            
+                color: #fff;
+                font-weight: 500;
+            }
+        }
+    } 
+
+    .info{
+        li{
+            list-style: none;
+            text-align: center;
+            color: #fff;
+
+            p i{
+                margin-right: .5rem;
+            }
+        }
+    }   
+
+    
+    @include desktop(){
+        &{
+            height: 30vh;
+            flex-direction: row;
+            justify-content: space-evenly;
+            background-position: top;
+            padding-top: 2rem;
+            margin-top: 4rem;
+        }
+
+        .logo-wh{
+            margin-top: 0;
+        }
+
+        .links li, .info li{
+            text-align: left;
+        }
+    }
+    
+}

@@ -1,7 +1,19 @@
-@import 'components/navbar.scss';
-@import 'views/index.scss';
+@import 'components/navbar', 'components/footer';
+@import 'views/index', 'views/adopciones.scss', 'views/animalDetalle.scss', 'views/donacion.scss';
+
+html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 body{
     overflow-x: hidden;
     font-family: $Typo;
+    background-color: #F7F9FE;
+}
+
+
+p, ul, ol{
+    margin-bottom: 0;
 }

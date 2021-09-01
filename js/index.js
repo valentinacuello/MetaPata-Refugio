@@ -11,3 +11,8 @@ const responsiveMenu = () =>{
 };
 
 responsiveMenu();
+
+
+document. getElementById("ctaBtn"). onclick = function () {
+    location.href = "adopciones.html";
+};
