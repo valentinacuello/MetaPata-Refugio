@@ -47,34 +47,6 @@ const detalleAnimal = (animalDetalles) => {
 
 };
 
-/*Validar formulario de adopción*/
-
-
-let formulario = document.querySelector(".form-adopcion");
-let inputs = document.querySelectorAll(".form-adopcion input");
-
-const validarInput = (input, id) =>{
-    if(input.value != null){
-        document.getElementById(`${id}`).classList.add("ok");
-    }else{
-        document.getElementById(`"${id}"`).classList.add("error");
-    }
-}
-
-const validarFormulario = (event) =>{
-    switch(event.target.name){
-        case "nombre":
-            validarInput(event.target, "nombre");
-        break;
-    }
-};
-
-formulario.addEventListener("submit", (event)=>{
-    event.preventDefault();
-
-    validarInput(event);
-});
-
 
 
 
