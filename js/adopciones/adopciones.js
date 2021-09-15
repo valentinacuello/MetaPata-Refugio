@@ -1,23 +1,24 @@
-let animalesEnAdopcion = [...arrayAnimales];
+let animalesJSONData = [];
+let animalesArray = [...animalesJSONData];
 
-
-const galeria = () =>{
+const cardAnimal = (array) => {
     let htmlContentToAppend = "";
 
-    if(animalesEnAdopcion.length == 0){
-        htmlContentToAppend = `<h6>No hay resultados</h6>`
+    if (array.length == 0) {
+        htmlContentToAppend = `<div class="error-container"><img src="img/error.png" class="error-img"></div>`
     }
 
-    for(let i = 0; i < animalesEnAdopcion.length; i++){
+    for (let i = 0; i < array.length; i++) {
         htmlContentToAppend += `
             <div class="card">
                 <div class="card-img">
-                    <img src="img/Adopcion/${animalesEnAdopcion[i].img}.jpg">
+                    <img src="img/Adopcion/${array[i].img}.jpg">
                 </div>
                 <div class="card-body">
-                    <h4>${animalesEnAdopcion[i].nombre}</h4>
-                    <p>${animalesEnAdopcion[i].sexo} · ${animalesEnAdopcion[i].tamanio}</p>
-                    <button class="mas-info" data-id="${animalesEnAdopcion[i].id}">Más info.</button>
+                    <h4>${array[i].nombre}</h4>
+                    <p>${array[i].sexo} · ${array[i].tamano}</p>
+                    <button class="mas-info" data-id="${array[i].id}">Más info.</button>
+                    
                 </div>
             </div>
         `
@@ -26,65 +27,78 @@ const galeria = () =>{
     document.querySelector(".galeria").innerHTML = htmlContentToAppend;
 };
 
-galeria();
+const galeria = document.querySelector(".galeria");
+
+galeria.addEventListener('click', event => {
+    if (event.target.matches(".mas-info")) {
+        event.preventDefault()
+
+        let btnTarget = event.target.dataset.id;
+
+        location.href = `animalDetalle.html?animal=${animalesJSONData[btnTarget - 1].nombre}`;
+    }
+});
+
 
 /*Filter Collapse Mobile*/
-document.querySelector(".filter-btn").addEventListener("click", ()=>{
+document.querySelector(".filter-btn").addEventListener("click", () => {
     document.querySelector(".filtros").classList.toggle("active-drop");
 });
 
-/*Filter*/
-const filtrarAnimales = (especie, edad, sexo, color, tamanio) =>{
-    let animalesFiltrados = animalesEnAdopcion.filter((animal)=>{
-        if((animal.especie == especie || especie == "todos") &&
-            (sexo == null || animal.sexo.toLowerCase() == sexo ) &&
+/*Función Filter*/
+const filtrarAnimales = (especie, edad, sexo, color, tamano) => {
+    let animalesFiltrados = animalesArray.filter((animal) => {
+        if ((animal.especie == especie || especie == "todos") &&
+            (sexo == null || animal.sexo.toLowerCase() == sexo) &&
             (color == null || animal.color.toLowerCase() == color) &&
-            (tamanio == null || animal.tamanio.toLowerCase() == tamanio)){            
+            (tamano == null || animal.tamano.toLowerCase() == tamano)) {
 
-            if((edad == null) || (edad == "cachorro" && animal.edad < 2)||
-            (edad == "joven" && animal.edad > 2 && animal.edad <= 4) ||
-            (edad == "adulto" && animal.edad > 4 && animal.edad < 7) ||
-            (edad == "senior" && animal.edad >= 7)
-            ){
+            if ((edad == null) || (edad == "cachorro" && animal.edad < 2) ||
+                (edad == "joven" && animal.edad > 2 && animal.edad <= 4) ||
+                (edad == "adulto" && animal.edad > 4 && animal.edad < 7) ||
+                (edad == "senior" && animal.edad >= 7)
+            ) {
                 return animal;
             }
         }
     });
 
-    animalesEnAdopcion = animalesFiltrados;
-    galeria();
+    cardAnimal(animalesFiltrados);
 };
 
 
-document.querySelector(".dropdowns").addEventListener("submit", (event)=>{
+//Evento del filtrado
+document.querySelector(".dropdowns").addEventListener("submit", (event) => {
     event.preventDefault();
 
     let formData = new FormData(event.target); //La interfaz FormData proporciona una manera sencilla de construir un conjunto de parejas clave/valor que 
-                                                //representan los campos de un formulario y sus valores
-                                                //The target property of the Event interface is a reference to the object onto which the event was dispatched
-    let data = Object.fromEntries(formData);//El método Object.fromEntries() transforma una lista de pares con [clave-valor] en un objeto.
-    console.log(data)
-    
-    animalesEnAdopcion = [...arrayAnimales];//Acá le asigno de nuevo como valor a la variable el array original, 
-                                            //ya que si realizo un filtro y luego quiero volver a filtrar, lo hace sobre el array filtrado y por ende, hay cosas que no están
-                                            //Entonces así, antes de ejecturar la función de filtrado, le re-asigna el valor a la variable del array original
-    filtrarAnimales(data.especie, data.edad, data.sexo, data.color, data.tamanio);
+    //representan los campos de un formulario y sus valores. The target property of the Event interface is a reference to the object onto which the event was dispatched
 
-    if(window.innerHeight < 767){
+    let data = Object.fromEntries(formData); //El método Object.fromEntries() transforma una lista de pares con [clave-valor] en un objeto.
+    console.log(data)
+
+    animalesArray = [...animalesJSONData]; //Acá le asigno de nuevo como valor a la variable el response del get, ya que si realizo un filtro y luego quiero volver
+    //a filtrar, lo hace sobre el array filtrado y por ende, hay cosas que no están. 
+    filtrarAnimales(data.especie, data.edad, data.sexo, data.color, data.tamano);
+
+    if (window.innerHeight < 767) {
         document.querySelector(".filtros").classList.toggle("active-drop");
     }
 });
 
-document.querySelector(".delete-filter-btn").addEventListener("click", (event)=>{
+
+//Reset del form
+document.querySelector(".delete-filter-btn").addEventListener("click", () => {
     document.querySelector(".dropdowns").reset();
 });
 
-document.querySelectorAll(".mas-info").forEach((btn)=>{
-    btn.addEventListener("click", (event)=>{
-        let btnId = event.target.dataset.id;
-        detalleAnimal(btnId);
-        location.href = "animalDetalle.html";
-    });    
+document.addEventListener("DOMContentLoaded", () => {
+    const getAnimalData = () => {
+        $.get("js/animales.json", (response) => {
+            animalesJSONData = response;
+            cardAnimal(animalesJSONData);
+        });
+    };
+
+    getAnimalData();
 });
-
-

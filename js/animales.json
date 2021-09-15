@@ -1,0 +1,101 @@
+[
+    {
+        "nombre": "Bandido",
+        "especie": "Perro",
+        "edad": 5,
+        "sexo": "Macho",
+        "color": "Marrón",
+        "tamano": "Mediano",
+        "id": 1,
+        "historia": " Bandido es un perrito adulto muy dulce. Se lleva muy bien con otros perros y niños, no así con gatos. Es súper tranquilo y compañero por lo que es ideal para una persona mayor.",
+        "img": "animal-1"
+    },
+    {
+        "nombre": "Margarita",
+        "especie": "Gato",
+        "edad": 2,
+        "sexo": "Hembra",
+        "color": "Negro y blanco",
+        "tamano": "Mediano",
+        "id": 2,
+        "historia": "Margarita es una gatita jóven que fue rescatada de una colonia de gatitos en el Parque Rodó. Muy dulce y compañera",
+        "img": "animal-2"
+    },
+    {
+        "nombre": "Pelusa",
+        "especie": "Perro",
+        "edad": 3,
+        "sexo": "Hembra",
+        "color": "Marrón y negro",
+        "tamano": "Grande",
+        "id": 3,
+        "historia": "Pelusa fue rescatada de la calle con 2 años aproximadamente. Fue encontrada con una lesión muy grave en su columna. Hoy está recuperada, aunque su patita izquierda no la apoya del todo; De todos modos, esto no es impedimento para llevar una vida normal",
+        "img": "animal-3"
+    },
+    {
+        "nombre": "Bombita",
+        "especie": "Perro",
+        "edad": 8,
+        "sexo": "Hembra",
+        "color": "Blanco",
+        "tamano": "Grande",
+        "id": 4,
+        "historia": "Bombita, una de las perritas más dulces que han pasado por nuestro refugio. Una grandulona llena de amor para dar, se lleva super bien con otros animales y con niños. Rescatada con sarna, hoy 100% recuperada esperando por su hogar definitivo",
+        "img": "animal-4"
+    },
+    {
+        "nombre": "Raulito",
+        "especie": "Gato",
+        "edad": 2,
+        "sexo": "Macho",
+        "color": "Tricolor",
+        "tamano": "Pequeño",
+        "id": 5,
+        "historia": "Raulito vivía junto con 12 hermanos más, quienes rescatamos de la casa de una señora que lamentablemente ya no los podía cuidar. Tanto él como sus hermanos se encontraban desnutridos; hoy, está sano y recuperado. Super cariñoso aunque bastante territorial con otros gatos.",
+        "img": "animal-5"
+    },
+    {
+        "nombre": "Luna",
+        "especie": "Gato",
+        "edad": 12,
+        "sexo": "Hembra",
+        "color": "Atigrado",
+        "tamano": "Grande",
+        "id": 6,
+        "historia": "Luna fue rescatada de la calle. Se encontraba viviendo en la calle, debajo de un auto roto; en estado de desnutrición severa. Le llevó 6 meses recuperarse. Hoy, está feliz y gordita esperando por su nuevo hogar. Es una gatita senior que le gusta dormir al solcito. Ideal para persona mayor",
+        "img": "animal-6"
+    },
+    {
+        "nombre": "Felipe",
+        "especie": "Perro",
+        "edad": 4,
+        "sexo": "Macho",
+        "color": "Negro y marrón",
+        "tamano": "Mediano",
+        "id": 7,
+        "historia": "Felipe es un perro jóven lleno de amor y energía, es por esto que es ideal para alguien que tenga niños, ya que le gusta muchísimo jugar y correr.",
+        "img": "animal-7"
+    },
+    {
+        "nombre": "Barbas",
+        "especie": "Perro",
+        "edad": 9,
+        "sexo": "Macho",
+        "color": "Negro y marrón",
+        "tamano": "Mediano",
+        "id": 8,
+        "historia": "Barbas es uno de los casos especiales de nuestro refugio. Fue rescatado del incendio de una vivienda y debido a que su familia no podía ocuparse de él, nosotros decicimos acogerlo y cuidarlo. Muy temoroso al comienzo, muy amoroso ahora. Es super tranquilo, le gusta mucho dormir la siesta.",
+        "img": "animal-8"
+    },
+    {
+        "nombre": "Bombón",
+        "especie": "Gato",
+        "edad": 4,
+        "sexo": "Hembra",
+        "color": "Blanco y negro",
+        "tamano": "Grande",
+        "id": 9,
+        "historia": "Bombón le hace honor a su nombre. Es una gatita jóven muy cariñosa. Le encanta dormir en brazos. Además de eso, super educada: sabe usar las piedritas sanitarias y si no las tiene, se las ingenia para pedirlas! Ama el atún.",
+        "img": "animal-9"
+    }
+]
