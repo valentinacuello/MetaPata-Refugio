@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,16 +34,17 @@
             </button>
             <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="adopciones.html" class="actual-link">Adopciones</a></li>
-                <li>Apadrinar</li>
                 <li><a href="donar.html">Donar</a></li>
-                <li>Contacto</li>
+                <li><a href="contacto.html">Contacto</a></a></li>
             </ul>
         </nav>
     </header>
-    <main class="detalle-container">
-        <section class="detalle-content">           
+    <main class="detalle-container"> 
+        <div class="header">
+            <h3>Adopciones <span>¡Conocé a tu próximo mejor amigo!</span></h3>
+        </div>
+        <section class="detalle-content">        
         </section>
         <section class="form-adopcion-container">
             <div class="form-header">
@@ -53,60 +53,76 @@
                 <p>Para realizar una solicitud de adopción, deberás llenar el siguiente formulario:</p>
             </div>
             <form action="" class="form-adopcion">                
-                <fieldset class="datos">
-                    <div class="nombre">
+                <fieldset class="datos fieldset-group ">
+                    <div class="nombre input-container">
                         <label for="nombre">Nombre</label>
                         <input type="text" name="nombre" placeholder="Ingresá tu nombre" id="nombre" class="">
+                        <small class="feedback">El nombre solo puede contener letras</small>
                     </div>
-                    <div class="apellido">
+                    <div class="apellido input-container">
                         <label for="apellido">Apellido</label>
-                        <input type="text" name="apellido" placeholder="Ingresá tu apellido">
+                        <input type="text" name="apellido" placeholder="Ingresá tu apellido" id="apellido">
+                        <small class="feedback">El apellido solo puede contener letras</small>
                     </div>
-                    <div class="direccion">
+                    <div class="direccion input-container">
                         <label for="direccion">Dirección</label>
-                        <input type="text" name="direccion" placeholder="Ingresá tu dirección">
+                        <input type="text" name="direccion" placeholder="Ingresá tu dirección" id="direccion">
                     </div>
-                    <div class="barrio">
+                    <div class="barrio input-container">
                         <label for="barrio">Barrio / Zona</label>
-                        <input type="text" name="barrio" placeholder="Ingresá tu barrio o zona">
+                        <input type="text" name="barrio" placeholder="Ingresá tu barrio o zona" id="barrio">
                     </div>
-                    <div class="telefono">
-                        <label for="telefono">Teléfono</label>
-                        <input type="number" name="telefono" placeholder="Ingresá tu número de teléfono fijo o número de celular">
-                    </div>
-                    <div class="email">
+                    <div class="email input-container">
                         <label for="email">Email</label>
-                        <input type="email" name="email" placeholder="Ingresá tu email">
+                        <input type="email" name="email" placeholder="Ingresá tu email" id="email">
+                        <small class="feedback">El email solo puede contener letras, números, puntos guiones medios y guiones bajos</small>
+                    </div>
+                    <div class="celular input-container">
+                        <label for="telefono">Celular</label>
+                        <input type="number" name="celular" placeholder="Ingresá tu número de celular fijo o número de celular" id="celular">
+                        <small class="feedback">El celular solo puede contener 9 dígitos</small>
                     </div>
                 </fieldset>
-                <div class="btn-container">
-                    <button type="submit" class="cancel-btn">Cancelar</button>
-                    <button type="submit" class="apply-btn">Enviar</button>
+                <div class="form-btn">
+                    <button type="button" class="borrar-btn" disabled>Borrar</button>
+                    <button type="submit" class="enviar-btn" disabled>Enviar</button>
                 </div>
             </form>
         </section>
     </main>
+    <div class="modal-adopcion-container">        
+        <div class="modal-box">
+            <button class="cerrar-modal"><i class="bi bi-x-lg"></i></button>
+            <img src="/img/adoption.svg">
+            <h4>¡Muchas gracias por <br> tu solicitud!</h4>
+            <p>En breve nos pondremos en contacto</p>
+        </div>
+    </div>
     <footer>
-        <img src="/img/logo-white.svg" alt="Logo de MetaPata Refugio" class="logo-wh">
-        <ul class="links">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Adopciones</a></li>
-            <li><a href="#">Apadrinar</a></li>
-            <li><a href="#">Donar</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-        <ul class="info">
-            <li>
-                <p><i class="bi bi-pin-map"></i> San José, Uruguay</p>
-            </li>
-            <li>
-                <p><i class="bi bi-envelope"></i> contacto@mprefugio.org.uy</p>
-            </li>
-            <li>
-                <p><i class="bi bi-facebook"></i> <i class="bi bi-instagram"></i> @metapatarefugio.uy</p>
-            </li>
-        </ul>
+        <div class="info">
+            <img src="img/logo-white.svg" alt="Logo de MetaPata Refugio" class="logo-wh">
+            <ul class="web-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="adopciones.html">Adopciones</a></li>
+                <li><a href="donar.html">Donar</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <ul class="info-links">
+                <li>
+                    <p><i class="bi bi-pin-map"></i> San José, Uruguay</p>
+                </li>
+                <li>
+                    <p><i class="bi bi-envelope"></i> contacto@mprefugio.org.uy</p>
+                </li>
+                <li>
+                    <p><i class="bi bi-facebook"></i> <i class="bi bi-instagram"></i> @metapatarefugio.uy</p>
+                </li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>Diseño y desarrollo: Valentina Cuello, 2021</p>
+            <a href="https://www.linkedin.com/in/valentinacuello/" target="_blank" >Linkedin</a>
+        </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/index.js" type="module"></script>

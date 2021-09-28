@@ -1,27 +1,42 @@
 .adopciones-container{
+    width: 100vw;
     min-height: 750px;
     padding-top: 104px;
-    padding: 104px 1rem 0 1rem;
-
-    @include desktop(){
-        display: grid;
-        grid-template-columns: 20% 80%;
-        grid-gap: 2rem;
-        padding: 104px 10rem 0 10rem;
-    }
-
+    padding: 104px 0px 0px 0px;
+    
     .header{
-        margin-top: 2rem;
+        height: 40vh;
+        background: url("/img/header-adopcion.jpg") no-repeat center;
+        background-size:  cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        position: relative;
+        z-index: -1;
+
+        &::after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: rgba($color: $primary-color, $alpha: 0.7), $alpha: 0.5);
+            position: absolute;
+            z-index: -1;
+        }
+
+        
         @include desktop(){
             &{
+                height: 25vh;
                 grid-column: -1/1;
             }
         }
 
 
         h3{
-            color: $primary-color;
-            text-align: center;
+            color: #fff;
+            text-align: center;            
     
             span{
                 display: block;
@@ -30,239 +45,270 @@
         }
     }
 
-    .filtros-container{
-        @include flexCenter(column, center);
-        align-items: unset;
+    .galeria-container{
+        width: 100%;
+        padding: 0 2rem;
 
         @include desktop(){
-            align-content: flex-start;
+            display: grid;
+            grid-template-columns: 20% 80%;
+            grid-gap: 2rem;
+            padding: 0px 10rem;
+            margin-top: 3rem
         }
 
-            
-        .filter-btn{
-            height: 48px;
-            border: none;
-            background-color: #ffff;
-            border-radius: 8px;
-            color: $secondary-color;
-            padding: .7rem 1rem;
-            margin: 2rem 0;
-            box-shadow: 0px 1px 3px rgba($color: #000000, $alpha: 0.2);
-            
+        .filtros-container{
+            @include flexCenter(column, center);
+            align-items: unset;
+    
             @include desktop(){
-                display: none;
+                align-content: flex-start;
             }
-        }
-
-        .filtros{
-            display: block;
-            height: 0;
-            overflow: hidden;
-            transition: height 0.2s ease-out;
-
-            @include desktop(){
-                height: 100%;
-            }
-
-            .dropdowns{
-                width: 100%;
-
-                label{
-                    color: $primary-color;
-                    font-weight: 500;
-                    margin-left: 1rem;
-                    font-size: 1.2rem;
+    
+                
+            .filter-btn{
+                height: 48px;
+                border: none;
+                background-color: #ffff;
+                border-radius: 8px;
+                color: $secondary-color;
+                padding: .7rem 1rem;
+                margin: 2rem 0;
+                box-shadow: 0px 1px 3px rgba($color: #000000, $alpha: 0.2);
+                
+                @include desktop(){
                     display: none;
                 }
-
-                .especie, .edad, .sexo, .color, .tamano{     
-                    position: relative;               
-
-                    &::after{
-                        content: "\f107";
-                        display: block;
-                        font-family: "Font Awesome 5 Free";
-                        font-weight: 900;
+            }
+    
+            .filtros{
+                display: block;
+                height: 0;
+                overflow: hidden;
+                transition: height 0.2s ease-out;
+    
+                @include desktop(){
+                    height: 100%;
+                }
+    
+                .dropdowns{
+                    width: 100%;
+    
+                    label{
                         color: $primary-color;
-                        position: absolute;
-                        bottom: 40%;
-                        right: 1rem;
-                        z-index: -1;
-                        cursor: pointer;
-
-                        @include desktop(){
-                            bottom: 25%;
+                        font-weight: 500;
+                        margin-left: 1rem;
+                        font-size: 1.2rem;
+                        display: none;
+                    }
+    
+                    .especie, .edad, .sexo, .color, .tamano{     
+                        position: relative;               
+    
+                        &::after{
+                            content: "\f107";
+                            display: block;
+                            font-family: "Font Awesome 5 Free";
+                            font-weight: 900;
+                            color: $primary-color;
+                            position: absolute;
+                            bottom: 40%;
+                            right: 1rem;
+                            z-index: -1;
+                            cursor: pointer;
+    
+                            @include desktop(){
+                                bottom: 25%;
+                            }
                         }
                     }
-                }
-
-
-                .especie select, .edad select, .sexo select,
-                .color select, .tamano select{
-                    width: 100%;
-                    height: 48px;
-                    color: $black;
-                    padding: 0 1rem;
-                    border: none;
-                    background-color: rgba($color: #ffffff, $alpha: 0.5);
-                    border-radius: 8px;
-                    box-shadow: 0px 1px 3px rgba($color: #000000, $alpha: 0.2);
-                    margin-bottom: 1rem;
-                    cursor: pointer;
-
-                    &{
-                        -webkit-appearance: none;
-                    }
-                }
-
-                @include desktop(){
-                    &{
-                        width: 95%;
-                        margin: 0 auto;
-                    }
-
-                    label{
-                        display: flex;
-                    }
-
+    
+    
                     .especie select, .edad select, .sexo select,
                     .color select, .tamano select{
-                        color: #414141;
-                        outline: none;
-                        
-
-                        &:focus{
-                            border: solid 2px rgba($color: $primary-color, $alpha: 0.5);
+                        width: 100%;
+                        height: 48px;
+                        color: $black;
+                        padding: 0 1rem;
+                        border: none;
+                        background-color: rgba($color: #ffffff, $alpha: 0.5);
+                        border-radius: 8px;
+                        box-shadow: 0px 1px 3px rgba($color: #000000, $alpha: 0.2);
+                        margin-bottom: 1rem;
+                        cursor: pointer;
+    
+                        &{
+                            -webkit-appearance: none;
+                        }
+                    }
+    
+                    @include desktop(){
+                        &{
+                            width: 95%;
+                            margin: 0 auto;
+                        }
+    
+                        label{
+                            display: flex;
+                        }
+    
+                        .especie select, .edad select, .sexo select,
+                        .color select, .tamano select{
+                            color: #414141;
+                            outline: none;
+                            
+    
+                            &:focus{
+                                border: solid 2px rgba($color: $primary-color, $alpha: 0.5);
+                            }
                         }
                     }
                 }
-            }
-
-            .btn-filter{
-                display: flex;
-                align-items: center;
-
-
-                .apply-filter-btn{
-                    width: 100%;
-                    height: 48px;
-                    border: none;
-                    background-color: $secondary-color;
-                    border-radius: 8px;
-                    color: #ffff;
-                    padding: .7rem 1rem;
-                    margin-left: .5rem;
-                    transition: .2s ease-in;
     
-                    &:hover{
-                        font-weight: 600;
-                        transform: translateY(-2px);                    
-                        box-shadow: 0px 1px 3px rgba($color: #000000, $alpha: 0.2);
-                        transition: transform .2s ease-in;
-                    }
-                }
+                .btn-filter{
+                    display: flex;
+                    align-items: center;
     
-                .delete-filter-btn{
-                    width: 100%;
-                    height: 48px;
-                    border: none;
-                    background-color: #d1d1d1;
-                    border-radius: 8px;
-                    color:  #ffff;
-                    padding: .7rem 1rem;
-                    margin-right: .5rem;
-                    transition: .2s ease-in;
     
-                    &:hover{
-                        font-weight: 600;
-                        background-color: #b1b1b1;
+                    .apply-filter-btn{
+                        width: 100%;
+                        height: 48px;
+                        border: none;
+                        background-color: $secondary-color;
+                        border-radius: 8px;
                         color: #ffff;
-                        transform: translateY(-2px);                    
-                        box-shadow: 0px 1px 3px rgba($color: #000000, $alpha: 0.2);
-                        transition: transform .2s ease-in;
+                        padding: .7rem 1rem;
+                        margin-left: .5rem;
+                        transition: .2s ease-in;
+        
+                        &:hover{
+                            font-weight: 600;
+                            transform: translateY(-2px);                    
+                            box-shadow: 0px 1px 3px rgba($color: #000000, $alpha: 0.2);
+                            transition: transform .2s ease-in;
+                        }
                     }
-                }
-            }
-            
-        }
-
-        .active-drop{
-            height: 24rem;
-            transition: height .2 ease;
-        }
-    }
-
-
-    .galeria{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 1rem;
-
-        .error-img{
-            width: 300px;
-        }
-
-        .card{
-            width: 100%;
-            height: 15rem;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 1rem;
-
-            .card-img{
-                width: 100%;
-                height: 50%;
-                img{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-
-            .card-body{
-                @include flexCenter(column, center);
-                h4{
-                    font-size: 1.3rem;
-                    color: $primary-color;
+        
+                    .delete-filter-btn{
+                        width: 100%;
+                        height: 48px;
+                        border: none;
+                        background-color: #d1d1d1;
+                        border-radius: 8px;
+                        color:  #ffff;
+                        padding: .7rem 1rem;
+                        margin-right: .5rem;
+                        transition: .2s ease-in;
+        
+                        &:hover{
+                            font-weight: 600;
+                            background-color: #b1b1b1;
+                            color: #ffff;
+                            transform: translateY(-2px);                    
+                            box-shadow: 0px 1px 3px rgba($color: #000000, $alpha: 0.2);
+                            transition: transform .2s ease-in;
+                        }
+                    }
                 }
                 
-                p{
-                    font-size: .9rem;
-                    font-weight: 500;
-                    margin-bottom: .5rem;
-                }
-
-                .mas-info{
-                    border: none;
-                    background-color: transparent;
-                    color: $secondary-color;
-                    font-weight: 500;
-                    align-self: flex-end;
-                    cursor: pointer;
-                }
             }
-
+    
+            .active-drop{
+                height: 24rem;
+                transition: height .2 ease;
+            }
         }
-
-        
-        @include desktop(){
-            &{
-                min-height: 60vh;
-                grid-template-columns: 1fr 1fr 1fr;                
-                grid-template-rows: 25rem;               
-
-                .card{
-                    height: 24rem;
-
-                    .card-img{
-                        height: 70%;
-                    }
-
-                    .card-body{
-                        height: 30%;
+    
+    
+        .galeria{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1rem;
+    
+            .error-img{
+                width: 300px;
+            }
+    
+            .card{
+                width: 100%;
+                height: 15rem;
+                border-radius: 8px;
+                overflow: hidden;
+                margin-bottom: 1rem;
+    
+                .card-img{
+                    width: 100%;
+                    height: 50%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
                     }
                 }
-            } 
+    
+                .card-body{
+                    @include flexCenter(column, center);
+                    h4{
+                        font-size: 1.3rem;
+                        color: $primary-color;
+                    }
+                    
+                    p{
+                        font-size: .8rem;
+                        font-weight: 500;
+                        margin-bottom: .5rem;
+                        text-align: center;
+    
+                        span{
+                            display: block;
+                            font-size: .7rem;
+                        }
+                    }
+    
+                    .mas-info{
+                        border: none;
+                        background-color: transparent;
+                        color: $secondary-color;
+                        font-weight: 500;
+                        align-self: flex-end;
+                        cursor: pointer;
+                        transition: .2s ease-in;
+    
+                        &:hover{
+                            transform: translateY(-2px);
+                            font-weight: 600;
+                        }
+                    }
+    
+                    @include desktop(){
+                        p{
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+    
+            }
+    
+            
+            @include desktop(){
+                &{
+                    min-height: 60vh;
+                    grid-template-columns: 1fr 1fr 1fr;                
+                    grid-template-rows: 25rem;               
+    
+                    .card{
+                        height: 24rem;
+    
+                        .card-img{
+                            height: 70%;
+                        }
+    
+                        .card-body{
+                            height: 30%;
+                        }
+                    }
+                } 
+            }
         }
     }
 }

@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaPata Refugio</title>
+    <title>MetaPata Refugio</title>    
+    <link rel="icon" href="/img/favi.png" type="image/x-icon">
     <!--Tipografía-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,11 +34,9 @@
             </button>
             <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="adopciones.html" class="actual-link">Adopciones</a></li>
-                <li>Apadrinar</li>
                 <li><a href="donar.html">Donar</a></li>
-                <li>Contacto</li>
+                <li><a href="contacto.html">Contacto</a></a></li>
             </ul>
         </nav>
     </header>
@@ -45,94 +44,100 @@
         <div class="header">
             <h3>Adopciones <span>¡Conocé a tu próximo mejor amigo!</span></h3>
         </div>
-        <section class="filtros-container">
-            <button class="filter-btn">Filtrar <i class="bi bi-sliders"></i></button>
-            <div class="filtros">
-                <form action="" class="dropdowns">
-                    <div class="especie">
-                        <label for="">Especie</label>
-                        <select name="especie" id="especie">
-                            <option value="todos" selected>Todos</option>
-                            <option value="Perro">Perros</option>
-                            <option value="Gato">Gatos</option>
-                        </select>
-                    </div>
-                    <div class="edad">
-                        <label for="">Edad</label>
-                        <select name="edad" id="edad" >
-                            <option value="" disabled selected>Elige una edad</option>
-                            <option value="cachorro">Cachorro</option>
-                            <option value="joven">Joven</option>
-                            <option value="adulto">Adulto</option>
-                            <option value="senior">Senior</option>
-                        </select>
-                    </div>
-                    <div class="sexo">
-                        <label for="">Sexo</label>
-                        <select name="sexo" id="sexo">
-                            <option value="" disabled selected>Elige un sexo</option>
-                            <option value="macho">Macho</option>
-                            <option value="hembra">Hembra</option>
-                        </select>
-                    </div>
-                    <div class="color">
-                        <label for="">Color</label>
-                        <select name="color" id="color">
-                            <option value="" disabled selected>Elige un color</option>
-                            <option value="negro">Negro</option>
-                            <option value="marrón">Marrón</option>
-                            <option value="blanco">Blanco</option>
-                            <option value="negro y marrón">Negro y blanco</option>
-                            <option value="marrón y negro">Marrón y negro</option>
-                            <option value="blanco y negro">Blanco y negro</option>
-                            <option value="gris">Gris</option>
-                            <option value="amarillo">Amarillo</option>
-                            <option value="tricolor">Tricolor</option>
-                            <option value="atigrado">Atigrado</option>
-                            <option value="naranja">Naranja</option>
-                        </select>
-                    </div>
-                    <div class="tamano">
-                        <label for="">Tamaño</label>
-                        <select name="tamano" id="tamanio">
-                            <option value="" disabled selected>Elige un tamaño</option>
-                            <option value="pequeño">Pequeño</option>
-                            <option value="mediano">Mediano</option>
-                            <option value="grande">Grande</option>
-                            <option value="muy-grande">Muy grande</option>
-                        </select>
-                    </div>
-                    <div class="btn-filter">
-                        <button type="submit" class="delete-filter-btn">Borrar</button>
-                        <button type="submit" class="apply-filter-btn">Filtrar</button>
-                    </div>
-                </form>
-            </div>
-        </section>
-        <section class="galeria">
-        </section>
+        <div class="galeria-container">
+            <section class="filtros-container">
+                <button class="filter-btn">Filtrar <i class="bi bi-sliders"></i></button>
+                <div class="filtros">
+                    <form action="" class="dropdowns">
+                        <div class="especie">
+                            <label for="">Especie</label>
+                            <select name="especie" id="especie">
+                                <option value="todos" selected>Todos</option>
+                                <option value="Perro">Perros</option>
+                                <option value="Gato">Gatos</option>
+                            </select>
+                        </div>
+                        <div class="edad">
+                            <label for="">Edad</label>
+                            <select name="edad" id="edad" >
+                                <option value="" disabled selected>Elige una edad</option>
+                                <option value="cachorro">Cachorro</option>
+                                <option value="joven">Joven</option>
+                                <option value="adulto">Adulto</option>
+                                <option value="senior">Senior</option>
+                            </select>
+                        </div>
+                        <div class="sexo">
+                            <label for="">Sexo</label>
+                            <select name="sexo" id="sexo">
+                                <option value="" disabled selected>Elige un sexo</option>
+                                <option value="macho">Macho</option>
+                                <option value="hembra">Hembra</option>
+                            </select>
+                        </div>
+                        <div class="color">
+                            <label for="">Color</label>
+                            <select name="color" id="color">
+                                <option value="" disabled selected>Elige un color</option>
+                                <option value="negro">Negro</option>
+                                <option value="marrón">Marrón</option>
+                                <option value="blanco">Blanco</option>
+                                <option value="negro y marrón">Negro y blanco</option>
+                                <option value="marrón y negro">Marrón y negro</option>
+                                <option value="blanco y negro">Blanco y negro</option>
+                                <option value="gris">Gris</option>
+                                <option value="amarillo">Amarillo</option>
+                                <option value="tricolor">Tricolor</option>
+                                <option value="atigrado">Atigrado</option>
+                                <option value="naranja">Naranja</option>
+                            </select>
+                        </div>
+                        <div class="tamano">
+                            <label for="">Tamaño</label>
+                            <select name="tamano" id="tamanio">
+                                <option value="" disabled selected>Elige un tamaño</option>
+                                <option value="pequeño">Pequeño</option>
+                                <option value="mediano">Mediano</option>
+                                <option value="grande">Grande</option>
+                                <option value="muy-grande">Muy grande</option>
+                            </select>
+                        </div>
+                        <div class="btn-filter">
+                            <button type="submit" class="delete-filter-btn">Borrar</button>
+                            <button type="submit" class="apply-filter-btn">Filtrar</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section class="galeria">
+            </section>
+        </div>
     </main>
     <footer>
-        <img src="/img/logo-white.svg" alt="Logo de MetaPata Refugio" class="logo-wh">
-        <ul class="links">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Adopciones</a></li>
-            <li><a href="#">Apadrinar</a></li>
-            <li><a href="#">Donar</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-        <ul class="info">
-            <li>
-                <p><i class="bi bi-pin-map"></i> San José, Uruguay</p>
-            </li>
-            <li>
-                <p><i class="bi bi-envelope"></i> contacto@mprefugio.org.uy</p>
-            </li>
-            <li>
-                <p><i class="bi bi-facebook"></i> <i class="bi bi-instagram"></i> @metapatarefugio.uy</p>
-            </li>
-        </ul>
+        <div class="info">
+            <img src="img/logo-white.svg" alt="Logo de MetaPata Refugio" class="logo-wh">
+            <ul class="web-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="adopciones.html">Adopciones</a></li>
+                <li><a href="donar.html">Donar</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <ul class="info-links">
+                <li>
+                    <p><i class="bi bi-pin-map"></i> San José, Uruguay</p>
+                </li>
+                <li>
+                    <p><i class="bi bi-envelope"></i> contacto@mprefugio.org.uy</p>
+                </li>
+                <li>
+                    <p><i class="bi bi-facebook"></i> <i class="bi bi-instagram"></i> @metapatarefugio.uy</p>
+                </li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>Diseño y desarrollo: Valentina Cuello, 2021</p>
+            <a href="https://www.linkedin.com/in/valentinacuello/" target="_blank" >Linkedin</a>
+        </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>

@@ -1,0 +1,177 @@
+.fieldset-group {
+
+    @include desktop() {
+        & {
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 1rem;
+            margin-top: 1rem;
+        }
+    }
+
+    p {
+        grid-column: -1 / 1;
+        color: $primary-color;
+        font-weight: 600;
+        font-size: 1.3rem;
+
+        &:last-of-type {
+            margin-top: 1rem;
+        }
+    }
+}
+
+.input-container {
+    position: relative;   
+    margin-top: 1.5rem;
+
+    label {
+        display: block;
+        font-weight: 500;
+    }
+
+    input,
+    select {
+        width: 100%;
+        height: 45px;
+        -webkit-appearance: none;
+    }
+
+    textarea{
+        width: 100%;
+        height: 10rem;
+    }
+
+    #tarjetasSelect{        
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+
+    small {
+        font-size: .7rem;
+    }
+}
+
+
+
+.tarjetas{
+    &::after{
+        content: "\f107";
+        display: block;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: $primary-color;
+        position: absolute;
+        bottom: 12%;
+        right: 1rem;
+        z-index: -1;
+        cursor: pointer;
+    }
+    
+}
+
+.form-btn {
+    display: flex;
+    margin-top: 2rem;
+    
+    .borrar-btn {
+        width: 40%;
+        height: 48px;
+        border: solid 1px #a8a8a8;
+        background-color: #fff;
+        border-radius: 8px;
+        color: #8f8f8f;
+        padding: .7rem 1rem;
+        margin-right: .5rem;
+        transition: .2s ease-in;
+
+        &:hover:enabled {
+            font-weight: 600;
+            background-color: #a8a8a8;
+            color: #ffff;
+            transform: translateY(-2px);
+            box-shadow: 0px 1px 3px rgba($color: #000000, $alpha: 0.2);
+            transition: transform .2s ease-in;
+        }
+
+        &:disabled {
+            color: #fff;
+            background-color: #a1a1a1;
+        }
+    }
+
+    .enviar-btn,
+    .finalizar-btn {
+        width: 60%;
+        height: 48px;
+        border: none;
+        background-color: $secondary-color;
+        border-radius: 8px;
+        color: #ffff;
+        padding: .7rem 1rem;
+        margin-left: .5rem;
+        transition: .2s ease-in;
+
+        &:hover:enabled {
+            font-weight: 600;
+            transform: translateY(-2px);
+            box-shadow: 0px 1px 3px rgba($color: #000000, $alpha: 0.2);
+            transition: transform .2s ease-in;
+        }
+
+        &:disabled {
+            background-color: #6e6e6e;
+        }
+
+    }
+    .enviar-btn{
+        margin-left: unset;
+    }
+
+}
+
+
+
+
+
+//Validación
+
+.error {
+    border: solid 2px #dc3545;
+    background: url("/img/error-mark.svg") no-repeat 95% 50%;
+    background-size: 1.2rem;
+
+    &:focus {
+        border: solid 2px #dc3545;
+        box-shadow: 0px 0px 0px 3px rgba($color: #dc3545, $alpha: 0.5);
+    }
+}
+
+.valido {
+    border: solid 2px #38b000;
+    background: url("/img/check-mark.svg") no-repeat 95% 50%;
+    background-size: 1.2rem;
+
+    &:focus {
+        border: solid 2px #38b000;
+        box-shadow: 0px 0px 0px 3px rgba($color: #38b000, $alpha: 0.5);
+    }
+}
+
+.invalido-feedback {
+    margin-top: .5rem;
+    display: block !important;
+}
+
+.feedback {
+    display: none;
+}

@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MetaPata Refugio</title>
+    <link rel="icon" href="/img/favi.png" type="image/x-icon">
     <!--Tipografía-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
@@ -35,120 +35,140 @@
             </button>
             <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="adopciones.html">Adopciones</a></li>
-                <li>Apadrinar</li>
                 <li><a href="donacion.html" class="actual-link">Donar</a></li>
-                <li>Contacto</li>
+                <li><a href="contacto.html">Contacto</a></a></li>
             </ul>
         </nav>
     </header>
     <main class="donacion-container">
         <section class="donacion">
             <div class="donacion-header">
-                <h3 class="title">¡Tu ayuda es importante para nosotros!</h3>
-                <img src="/img/seperador.svg"  class="separador">
-                <p>Nuestro refugio es una organización sin fines de lucro que necesita del aporte solidario de sus socios para su funcionamiento. Los costos de alimentación, atención veterinaria y de personal que atiende los animales son cubiertos con las colaboraciones.</p>
+                <h3 class="title">¡Tu ayuda es importante para nosotros!</h3>             
             </div>
-            <form class="form-donacion">
-                <fieldset class="metodo">
-                    <p>Seleccioná el monto que te gustaría donar</p>                    
-                    <input type="radio" name="tipo" value="Una vez">
-                    <label for="">Una vez</label>                    
-                    <input type="radio" name="tipo" value="Mensual">
-                    <label for="">Mensual</label>
-                    <div class="monto">
-                        <input type="radio" name="monto" value="250">                        
-                        <label for="">$250</label>
-                        <input type="radio" name="monto" value="500">
-                        <label for="">$500</label>
-                        <input type="radio" name="monto" value="1000">
-                        <label for="">$1000</label>
-                        <input type="radio" name="monto" value="1500">
-                        <label for="">$1500</label>
+            <p class="msj-mision">Nuestro refugio es una organización sin fines de lucro que necesita del aporte solidario de sus
+                socios para su funcionamiento. Los costos de alimentación, atención veterinaria y de personal que
+                atiende los animales son cubiertos con las colaboraciones.</p>
+            <div class="form-container detalle-donacion">
+                <form class="form-donacion">
+                    <fieldset class="metodo">
+                        <p>Seleccioná el monto que te gustaría donar</p>
+                        <input type="radio" name="tipo" value="Una vez" checked>
+                        <label for="">Una vez</label>
+                        <input type="radio" name="tipo" value="Mensual">
+                        <label for="">Mensual</label>
+                        <div class="monto">
+                            <input type="radio" name="monto" value="250" checked>
+                            <label for="">$250</label>
+                            <input type="radio" name="monto" value="500">
+                            <label for="">$500</label>
+                            <input type="radio" name="monto" value="1000">
+                            <label for="">$1000</label>
+                            <input type="radio" name="monto" value="1500">
+                            <label for="">$1500</label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="fieldset-group">
+                        <p>Tus datos</p>
+                        <div class="nombre input-container">
+                            <label for="">Nombre</label>
+                            <input type="text" placeholder="Ingresa tu nombre" name="nombre" id="nombre">
+                            <small class="feedback">El nombre solo puede contener letras</small>
+                        </div>
+                        <div class="apellido input-container">
+                            <label for="">Apellido</label>
+                            <input type="text" placeholder="Ingresa tu apellido" name="apellido" id="apellido">
+                            <small class="feedback">El apellido solo puede contener letras</small>
+                        </div>
+                        <div class="email input-container">
+                            <label for="">Email</label>
+                            <input type="email" placeholder="Ingresa tu email" name="email" id="email">
+                            <small class="feedback">El email solo puede contener letras, números, puntos guiones medios y guiones bajos</small>
+                        </div>
+                        <div class="celular input-container">
+                            <label for="">Celular</label>
+                            <input type="number" placeholder="Ingresa tu celular" name="celular" id="celular"  maxlength="9">
+                            <small class="feedback">El celular solo puede contener 9 dígitos</small>
+                        </div>
+                    </fieldset>
+                    <fieldset class="fieldset-group">
+                        <p>Detalles del pago</p>
+                        <div class="tarjetas input-container">
+                            <label for="">Medio de pago</label>
+                            <select name="tarjeta" id="tarjetasSelect">
+                                <option value="OCA" selected>OCA</option>
+                                <option value="Cabal">Cabal</option>
+                                <option value="Creditel">Creditel</option>
+                                <option value="PassCard">PassCard</option>
+                            </select>
+                        </div>
+                        <div class="numTar input-container">
+                            <label for="">Número de tarjeta</label>
+                            <input type="number" placeholder="Ingresa el número de tarjeta" name="numTar" id="numTar"  maxlength="16">
+                            <small class="feedback">El número de tarjeta no es válido</small>
+                        </div>
+                        <div class="vencimiento input-container">
+                            <label for="">Vencimiento</label>
+                            <input type="text" placeholder="MM/AA" name="vencimiento" id="vencimiento" maxlength="5">
+                            <small class="feedback">La fecha de vencimiento no es válida, solo puede tener cuatro números</small>
+                        </div>
+                        <div class="cvv input-container">
+                            <label for="">CVV</label>
+                            <input type="number" placeholder="CVV" name="cvv" id="cvv"  maxlength="3"> 
+                            <small class="feedback">El código CVV no es válido</small>
+                        </div>
+                    </fieldset>
+                    <div class="form-btn">
+                        <button type="button" class="borrar-btn" id="borrarBtn" disabled>Borrar</button>
+                        <button type="submit" class="finalizar-btn" id="finalizarBtn" disabled>Realizar donación</button>
                     </div>
-                </fieldset>
-                <fieldset class="datos">
-                    <p>Tus datos</p>
-                    <div class="nombre">
-                        <label for="">Nombre</label>
-                        <input type="text" placeholder="Ingresa tu nombre" required name="nombre">
-                    </div>
-                    <div class="apellido">
-                        <label for="">Apellido</label>
-                        <input type="text" placeholder="Ingresa tu apellido" required name="apellido">
-                    </div>
-                    <div class="email">
-                        <label for="">Email</label>
-                        <input type="text" placeholder="Ingresa tu email" required name="email">
-                        <small>Por este medio recibirás los detalles de la donación realizada</small>
-                    </div>
-                    <div class="celular">
-                        <label for="">Celular</label>
-                        <input type="text" placeholder="Ingresa tu celular" required name="celular">
-                    </div>
-                </fieldset>
-                <fieldset class="pago">
-                    <p>Detalles del pago</p>
-                    <div class="tarjeta">
-                        <label for="">Seleccioná un medio para realizar el pago</label>
-                        <select name="tarjeta" id="especie">
-                            <option value="OCA" selected>OCA</option>
-                            <option value="Cabal">Cabal</option>
-                            <option value="Creditel">Creditel</option>
-                            <option value="PassCard">PassCard</option>
-                        </select>
-                    </div>
-                    <div class="info-tarjeta">
-                        <label for="">Número de tarjeta</label>
-                        <input type="text" placeholder="Ingresa el número de tarjeta" required name="numTar">
-                    </div>
-                    <div class="vencimiento">
-                        <label for="">Vencimiento</label>
-                        <input type="text" placeholder="MM/AA" required name="vencimiento">
-                    </div>
-                    <div class="cvv">
-                        <label for="">CVV</label>
-                        <input type="text" placeholder="CVV" required name="cvv">
-                    </div>
-                </fieldset>
-                <div class="form-btn">
-                    <button type="submit" class="cancel-btn">Cancelar</button>
-                    <button type="submit" class="finalizar-btn">Realizar donación</button>
-                </div>
-            </form>              
-            <div class="detalles-donacion"></div>          
+                </form>
+            </div>
         </section>
     </main>    
     <div class="modal-container">
-        <div class="modal-content">
-            <img src="img/donacion-icon.png">
-            <h3>¡Muchas gracias por tu ayuda!</h3>
-            <button type="button">Volver al inicio</button>
+        <div class="spinner-border text-muted"></div>
+        <div class="modal-box">
+            <img src="/img/donation.svg">
+            <h4>¿Deseas confirmar la <br> siguiente donación?</h4>
+            <div class="detalle-modal">
+                <p>Tipo de donación: <span id="tipoModal">una vez</span></p>
+                <p>Monto: $<span id="montoModal">250</span></p>
+            </div>
+            <div class="btn-container">
+                <button class="cancelar-btn">Cancelar</button>
+                <button class="confirmar-btn">Confirmar</button>
+            </div>
         </div>
     </div>
     <footer>
-        <img src="/img/logo-white.svg" alt="Logo de MetaPata Refugio" class="logo-wh">
-        <ul class="links">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Adopciones</a></li>
-            <li><a href="#">Apadrinar</a></li>
-            <li><a href="#">Donar</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-        <ul class="info">
-            <li>
-                <p><i class="bi bi-pin-map"></i> San José, Uruguay</p>
-            </li>
-            <li>
-                <p><i class="bi bi-envelope"></i> contacto@mprefugio.org.uy</p>
-            </li>
-            <li>
-                <p><i class="bi bi-facebook"></i> <i class="bi bi-instagram"></i> @metapatarefugio.uy</p>
-            </li>
-        </ul>
+        <div class="info">
+            <img src="img/logo-white.svg" alt="Logo de MetaPata Refugio" class="logo-wh">
+            <ul class="web-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="adopciones.html">Adopciones</a></li>
+                <li><a href="donar.html">Donar</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <ul class="info-links">
+                <li>
+                    <p><i class="bi bi-pin-map"></i> San José, Uruguay</p>
+                </li>
+                <li>
+                    <p><i class="bi bi-envelope"></i> contacto@mprefugio.org.uy</p>
+                </li>
+                <li>
+                    <p><i class="bi bi-facebook"></i> <i class="bi bi-instagram"></i> @metapatarefugio.uy</p>
+                </li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>Diseño y desarrollo: Valentina Cuello, 2021</p>
+            <a href="https://www.linkedin.com/in/valentinacuello/" target="_blank" >Linkedin</a>
+        </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
     <script src="js/donacion.js"></script>
 </body>

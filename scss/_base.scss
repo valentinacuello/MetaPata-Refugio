@@ -15,3 +15,13 @@ $secondary-color: #F79256;
 $primary-color-op: #17c3b20e;
 $black: #181818;
 $bg-color: #F7F9FE;
+
+/*Validaciones*/
+
+.error{
+    border: solid 2px red;
+}
+
+.ok{
+    border: solid 2px green;
+}

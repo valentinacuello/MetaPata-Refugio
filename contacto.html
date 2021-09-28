@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaPata Refugio</title>
+    <link rel="icon" href="/img/favi.png" type="image/x-icon">
+    <!--Tipografía-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!--Styles-->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="img/logo-refu.png" alt="Logotipo del refugio MetaPata">
+            </a>
+            <button id="menu-toggle">
+                <span class="burger-menu" id="burgerMenu"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="adopciones.html">Adopciones</a></li>
+                <li><a href="donar.html">Donar</a></li>
+                <li><a href="contacto.html" class="actual-link">Contacto</a></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contacto">
+            <div class="contacto-header">
+                <h3 class="title">¡Estamos en contacto! <span>Dejanos tu mensaje</span> </h4>
+            </div>
+            <form class="form-contacto">
+                <fieldset class="contacto-inputs fieldset-group">
+                    <div class="nombre input-container">
+                        <label for="">Nombre</label>
+                        <input type="text" placeholder="Ingresa tu nombre" name="nombre" id="nombre">
+                        <small class="feedback">El nombre solo puede contener letras</small>
+                    </div>
+                    <div class="email input-container">
+                        <label for="">Email</label>
+                        <input type="email" placeholder="Ingresa tu email" name="email" id="email">
+                        <small class="feedback">El email solo puede contener letras, números, puntos guiones medios
+                            y guiones bajos</small>
+                    </div>
+                    <div class="text-area input-container">
+                        <label for="">Escribí aquí tu mensaje</label>
+                        <textarea name="textarea" class="textarea" id="textarea"></textarea>
+                        <small class="feedback">El email solo puede contener letras, números, puntos guiones medios
+                            y guiones bajos</small>
+                    </div>
+                </fieldset>
+                <div class="btn-container form-btn">
+                    <button class="enviar-btn">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="info">
+            <img src="img/logo-white.svg" alt="Logo de MetaPata Refugio" class="logo-wh">
+            <ul class="web-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="adopciones.html">Adopciones</a></li>
+                <li><a href="donar.html">Donar</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <ul class="info-links">
+                <li>
+                    <p><i class="bi bi-pin-map"></i> San José, Uruguay</p>
+                </li>
+                <li>
+                    <p><i class="bi bi-envelope"></i> contacto@mprefugio.org.uy</p>
+                </li>
+                <li>
+                    <p><i class="bi bi-facebook"></i> <i class="bi bi-instagram"></i> @metapatarefugio.uy</p>
+                </li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>Diseño y desarrollo: Valentina Cuello, 2021</p>
+            <a href="https://www.linkedin.com/in/valentinacuello/" target="_blank">Linkedin</a>
+        </div>
+    </footer>
+    <script src="js/index.js"></script>
+    <script src="js/contacto.js"></script>
+</body>
+
+</html>

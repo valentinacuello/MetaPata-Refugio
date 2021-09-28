@@ -1,5 +1,5 @@
-@import 'components/navbar', 'components/footer';
-@import 'views/index', 'views/adopciones.scss', 'views/animalDetalle.scss', 'views/donacion.scss';
+@import 'components/navbar', 'components/footer', 'components/modal.scss', 'components/spinner.scss';
+@import 'views/index', 'views/adopciones.scss', 'views/animalDetalle.scss', 'views/donacion.scss', 'views/formularios.scss', 'views/contacto.scss';
 
 html{
     padding: 0;
@@ -16,7 +16,25 @@ body{
     background-color: #F7F9FE;
 }
 
+main{
+    padding: 104px 0px 0px 0px;
+}
 
 p, ul, ol{
     margin-bottom: 0;
+}
+
+input, select, textarea{
+    border: solid 1px rgba($color: $primary-color, $alpha: 0.7);
+    border-radius: 4px;
+    padding-left: 1rem;
+    outline: none;
+
+    &:focus{
+        border: solid 2px rgba($color: $primary-color, $alpha: 0.7);
+    }
+}
+
+textarea{
+    padding-top: 1rem;
 }

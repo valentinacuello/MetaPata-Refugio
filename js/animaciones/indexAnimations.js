@@ -1,13 +1,14 @@
 
 //Animaciones
 
-const heroAnimation = () => {
+
+const heroAnimation = () => {    
     setTimeout(() => {
         $(".home-title").css({
             "transform": "translateX(0px)"
         }).animate({
             opacity: 1
-        })
+        });
     }, 200);
 
     setTimeout(() => {

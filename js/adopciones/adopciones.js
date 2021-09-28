@@ -1,5 +1,5 @@
 let animalesJSONData = [];
-let animalesArray = [...animalesJSONData];
+
 
 const cardAnimal = (array) => {
     let htmlContentToAppend = "";
@@ -17,21 +17,21 @@ const cardAnimal = (array) => {
                 <div class="card-body">
                     <h4>${array[i].nombre}</h4>
                     <p>${array[i].sexo} · ${array[i].tamano}</p>
-                    <button class="mas-info" data-id="${array[i].id}">Más info.</button>
-                    
+                    <button class="mas-info" data-id="${array[i].id}">Más info. <i class="bi bi-arrow-right"></i></button>                    
                 </div>
             </div>
         `
-    }
+    };
 
     document.querySelector(".galeria").innerHTML = htmlContentToAppend;
 };
 
+/*Evento para que los botones vayan a la página de cada animal*/
 const galeria = document.querySelector(".galeria");
 
 galeria.addEventListener('click', event => {
     if (event.target.matches(".mas-info")) {
-        event.preventDefault()
+        event.preventDefault();
 
         let btnTarget = event.target.dataset.id;
 
@@ -40,13 +40,10 @@ galeria.addEventListener('click', event => {
 });
 
 
-/*Filter Collapse Mobile*/
-document.querySelector(".filter-btn").addEventListener("click", () => {
-    document.querySelector(".filtros").classList.toggle("active-drop");
-});
-
 /*Función Filter*/
 const filtrarAnimales = (especie, edad, sexo, color, tamano) => {
+    let animalesArray = [...animalesJSONData];
+
     let animalesFiltrados = animalesArray.filter((animal) => {
         if ((animal.especie == especie || especie == "todos") &&
             (sexo == null || animal.sexo.toLowerCase() == sexo) &&
@@ -81,7 +78,7 @@ document.querySelector(".dropdowns").addEventListener("submit", (event) => {
     //a filtrar, lo hace sobre el array filtrado y por ende, hay cosas que no están. 
     filtrarAnimales(data.especie, data.edad, data.sexo, data.color, data.tamano);
 
-    if (window.innerHeight < 767) {
+    if (window.innerHeight < 824) {
         document.querySelector(".filtros").classList.toggle("active-drop");
     }
 });
@@ -91,6 +88,14 @@ document.querySelector(".dropdowns").addEventListener("submit", (event) => {
 document.querySelector(".delete-filter-btn").addEventListener("click", () => {
     document.querySelector(".dropdowns").reset();
 });
+
+
+
+/*Filter Collapse Mobile*/
+document.querySelector(".filter-btn").addEventListener("click", () => {
+    document.querySelector(".filtros").classList.toggle("active-drop");
+});
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const getAnimalData = () => {
