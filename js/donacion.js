@@ -64,7 +64,7 @@ const validarFormulario = (event) => {
         case "cvv":
             validarInput(cvv, expresiones.cvvTarjetaExp);
             break;
-    }
+    }; 
 
     finalizarBoton();
 };
@@ -73,6 +73,7 @@ const validarFormulario = (event) => {
 inputs.forEach((input) => {
     input.addEventListener("keyup", validarFormulario);
 });
+
 
 const finalizarBoton = () => {
     let finalizarBtn = document.getElementById("finalizarBtn");
@@ -166,10 +167,10 @@ document.querySelector(".form-donacion").addEventListener("submit", (event) => {
 
         setTimeout(() => {
             document.querySelector(".modal-container").style.display = "none";
-            window.scrollTo(0,0);
+            window.scrollTo(0, 0);
             realizarDonacion(data.tipo, data.monto, data.nombre, data.apellido, data.email, data.celular, data.tarjeta, data.numTar);
         }, 1500);
-        
+
     });
 
 });

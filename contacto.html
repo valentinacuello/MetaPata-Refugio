@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +16,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <!-- Bootstrap Font Icon CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <!--FontAwesome Icons-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--Styles-->
     <link rel="stylesheet" href="css/styles.css" type="text/css">
 </head>
@@ -27,7 +30,7 @@
             <a href="index.html" class="logo">
                 <img src="img/logo-refu.png" alt="Logotipo del refugio MetaPata">
             </a>
-            <button id="menu-toggle">
+            <button id="menu-toggle" aria-label="Menu toggle">
                 <span class="burger-menu" id="burgerMenu"></span>
             </button>
             <ul class="nav-links">
@@ -41,34 +44,58 @@
     <main>
         <section class="contacto">
             <div class="contacto-header">
-                <h3 class="title">¡Estamos en contacto! <span>Dejanos tu mensaje</span> </h4>
+                <h3 class="title">¡Estamos en contacto! <span>Dejanos tu mensaje</span> </h3>                
+                <div class="breadcrumb-container">
+                    <ul class="breadcrumb-list">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li>Contacto</li>
+                    </ul>
+                </div>
             </div>
             <form class="form-contacto">
                 <fieldset class="contacto-inputs fieldset-group">
                     <div class="nombre input-container">
-                        <label for="">Nombre</label>
+                        <label for="nombre">Nombre</label>
                         <input type="text" placeholder="Ingresa tu nombre" name="nombre" id="nombre">
-                        <small class="feedback">El nombre solo puede contener letras</small>
                     </div>
                     <div class="email input-container">
-                        <label for="">Email</label>
+                        <label for="email">Email</label>
                         <input type="email" placeholder="Ingresa tu email" name="email" id="email">
-                        <small class="feedback">El email solo puede contener letras, números, puntos guiones medios
-                            y guiones bajos</small>
+                    </div>
+                    <div class="celular input-container">
+                        <label for="celular">Celular</label>
+                        <input type="number" placeholder="Ingresa tu celular" name="celular" id="celular" maxlength="9">
+                    </div>
+                    <div class="asunto input-container">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" placeholder="Ingresa tu celular" name="asunto" id="asunto">
                     </div>
                     <div class="text-area input-container">
-                        <label for="">Escribí aquí tu mensaje</label>
+                        <label for="textarea">Escribí aquí tu mensaje</label>
                         <textarea name="textarea" class="textarea" id="textarea"></textarea>
                         <small class="feedback">El email solo puede contener letras, números, puntos guiones medios
                             y guiones bajos</small>
                     </div>
                 </fieldset>
+                <div class="error-contacto">
+                    <img src="/img/error-mark.svg">
+                    <p>Uno o más campos tienen un error. Por favor revisa e intenta de nuevo.</p>
+                </div>
                 <div class="btn-container form-btn">
-                    <button class="enviar-btn">Enviar</button>
+                    <button class="enviar-btn" aria-label="Enviar">Enviar</button>
                 </div>
             </form>
         </section>
     </main>
+    <div class="modal-container">
+        <div class="spinner-border text-muted"></div>
+        <div class="modal-box">
+            <button class="cerrar-modal"><i class="bi bi-x-lg"></i></button>
+            <img src="/img/chat.svg">
+            <h4>¡Muchas gracias por <br> escribirnos!</h4>
+            <p>En breve responderemos a tu consulta</p>
+        </div>
+    </div>
     <footer>
         <div class="info">
             <img src="img/logo-white.svg" alt="Logo de MetaPata Refugio" class="logo-wh">

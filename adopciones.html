@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +28,7 @@
             <a href="index.html" class="logo">
                 <img src="img/logo-refu.png" alt="Logotipo del refugio MetaPata">
             </a>
-            <button id="menu-toggle">
+            <button id="menu-toggle" aria-label="Menu toggle">
                 <span class="burger-menu" id="burgerMenu"></span>
             </button>
             <ul class="nav-links">
@@ -43,6 +42,12 @@
     <main class="adopciones-container">
         <div class="header">
             <h3>Adopciones <span>¡Conocé a tu próximo mejor amigo!</span></h3>
+            <div class="breadcrumb-container">
+                <ul class="breadcrumb-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li>Adopciones</li>
+                </ul>
+            </div>
         </div>
         <div class="galeria-container">
             <section class="filtros-container">
@@ -50,7 +55,7 @@
                 <div class="filtros">
                     <form action="" class="dropdowns">
                         <div class="especie">
-                            <label for="">Especie</label>
+                            <label for="especie">Especie</label>
                             <select name="especie" id="especie">
                                 <option value="todos" selected>Todos</option>
                                 <option value="Perro">Perros</option>
@@ -58,7 +63,7 @@
                             </select>
                         </div>
                         <div class="edad">
-                            <label for="">Edad</label>
+                            <label for="edad">Edad</label>
                             <select name="edad" id="edad" >
                                 <option value="" disabled selected>Elige una edad</option>
                                 <option value="cachorro">Cachorro</option>
@@ -68,7 +73,7 @@
                             </select>
                         </div>
                         <div class="sexo">
-                            <label for="">Sexo</label>
+                            <label for="sexo">Sexo</label>
                             <select name="sexo" id="sexo">
                                 <option value="" disabled selected>Elige un sexo</option>
                                 <option value="macho">Macho</option>
@@ -76,7 +81,7 @@
                             </select>
                         </div>
                         <div class="color">
-                            <label for="">Color</label>
+                            <label for="color">Color</label>
                             <select name="color" id="color">
                                 <option value="" disabled selected>Elige un color</option>
                                 <option value="negro">Negro</option>
@@ -93,7 +98,7 @@
                             </select>
                         </div>
                         <div class="tamano">
-                            <label for="">Tamaño</label>
+                            <label for="tamano">Tamaño</label>
                             <select name="tamano" id="tamanio">
                                 <option value="" disabled selected>Elige un tamaño</option>
                                 <option value="pequeño">Pequeño</option>
@@ -103,8 +108,8 @@
                             </select>
                         </div>
                         <div class="btn-filter">
-                            <button type="submit" class="delete-filter-btn">Borrar</button>
-                            <button type="submit" class="apply-filter-btn">Filtrar</button>
+                            <button type="submit" class="delete-filter-btn" aria-label="Borrar">Borrar</button>
+                            <button type="submit" class="apply-filter-btn" aria-label="Filtrar">Filtrar</button>
                         </div>
                     </form>
                 </div>

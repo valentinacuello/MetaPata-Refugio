@@ -1,4 +1,5 @@
-let inputs = document.querySelectorAll(".form-contacto inputs");
+let inputs = document.querySelectorAll(".form-contacto input");
+let textAreaInput = document.querySelector(".form-contacto textarea");
 let feedback = document.querySelector(".feedback");
 
 //Inputs - Datos
@@ -9,8 +10,7 @@ let textarea = document.getElementById("textarea");
 //Expresiones
 let expresiones = {
     caracteresExp: /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/,
-    emailExp: /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
-    textareaExp: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+    emailExp: /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/
 };
 
 
@@ -18,31 +18,77 @@ const validarInput = (input, expresion) => {
 
     if (!expresion.test(input.value)) {
         input.classList.add("error");
-        input.classList.remove("valido");
-        document.querySelector(`.${input.name} .feedback`).classList.add("invalido-feedback");
     } else {
         input.classList.remove("error");
-        input.classList.add("valido");
-        document.querySelector(`.${input.name} .feedback`).classList.remove("invalido-feedback");
     }
 
 };
 
+const validarTextArea = (input) => {
+
+    if (input.value) {
+        input.classList.remove("error");
+    } else {
+        input.classList.add("error");
+    }
+
+};
 
 const validarFormulario = (event) => {
     switch (event.target.name) {
-        //Datos personales
         case "nombre":
             validarInput(nombre, expresiones.caracteresExp);
             break;
+
         case "email":
             validarInput(email, expresiones.emailExp);
             break;
-    }
+
+        case "textarea":
+            validarTextArea(textarea);
+            break;
+    };
+
 };
+
+
+inputs.forEach((input) => {
+    input.addEventListener("keyup", validarFormulario);
+});
+
+textAreaInput.addEventListener("keyup", validarFormulario);
+
 
 document.querySelector(".form-contacto").addEventListener("submit", (event) => {
     event.preventDefault();
-    validarFormulario();
-    
+
+    if (nombre.value && email.value && textarea.value) {
+        document.querySelector(".modal-container").style.display = "flex";
+        document.querySelector(".spinner-border").style.display = "block";
+        document.querySelector(".error-contacto").classList.remove("error-activo");
+
+    } else {
+        document.querySelector(".error-contacto").classList.add("error-activo");
+        nombre.classList.add("error");
+        email.classList.add("error");
+        textarea.classList.add("error");
+    }
+
+    setTimeout(() => {
+        document.querySelector(".spinner-border").style.display = "none";
+        document.querySelector(".modal-box").style.display = "flex";
+    }, 500);
+
+});
+
+document.querySelector(".cerrar-modal").addEventListener("click", () => {
+    document.querySelector(".modal-box").style.display = "none";
+    document.querySelector(".spinner-border").style.display = "block";
+    //Resetea el formulario
+    setTimeout(() => {
+        document.querySelector(".modal-container").style.display = "none";
+        document.querySelector(".form-contacto").reset();
+    }, 200);
+
+
 });

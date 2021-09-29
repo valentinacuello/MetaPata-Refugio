@@ -27,7 +27,7 @@ const detalleAnimal = (animalDetalles) => {
 
         if (nameURL == animalDetalles[i].nombre) {
             htmlContentToAppend = `
-                <img src="/img/Adopcion/${animalDetalles[i].img}.jpg" class="detalle-img"> 
+                <img src="/img/Adopcion/${animalDetalles[i].img}.jpg" class="detalle-img" alt="Foto de ${animalDetalles[i].nombre}, ${animalDetalles[i].especie} ${animalDetalles[i].sexo} de ${animalDetalles[i].edad} años"> 
                 <div class="info-body">
                     <div class="titulo">
                         <h1 class="nombre">¡Hola! Soy ${animalDetalles[i].nombre}</h1>
@@ -57,7 +57,10 @@ const detalleAnimal = (animalDetalles) => {
                     </div>
                 </div>
             `;
+
+            document.getElementById("animalActual").innerText = animalDetalles[i].nombre;
         }
+
     };
 
     document.querySelector(".detalle-content").innerHTML = htmlContentToAppend;
@@ -126,7 +129,7 @@ const borrarBtn = () => {
     email.classList.remove("error");
     celular.classList.remove("error");
 
-    document.querySelectorAll(".feedback").forEach((feedback)=>{
+    document.querySelectorAll(".feedback").forEach((feedback) => {
         feedback.classList.remove("invalido-feedback");
     });
 };
@@ -153,14 +156,21 @@ document.querySelector(".borrar-btn").addEventListener("click", borrarBtn);
 
 document.querySelector(".form-adopcion").addEventListener("submit", (event) => {
     event.preventDefault();
-    document.querySelector(".modal-adopcion-container").style.display = "flex";
+    document.querySelector(".modal-container").style.display = "flex";
+    document.querySelector(".spinner-border").style.display = "block";
+
+
+    setTimeout(() => {
+        document.querySelector(".spinner-border").style.display = "none";
+        document.querySelector(".modal-box").style.display = "flex";
+    }, 1500);
+
 });
 
 
-document.querySelector(".cerrar-modal").addEventListener("click", ()=>{
-    document.querySelector(".modal-adopcion-container").style.display = "none";
-    
-    
+document.querySelector(".cerrar-modal").addEventListener("click", () => {
+    document.querySelector(".modal-container").style.display = "none";
+
     //Resetea el formulario
     document.querySelector(".form-adopcion").reset();
 
@@ -174,12 +184,12 @@ document.querySelector(".cerrar-modal").addEventListener("click", ()=>{
     //Deshabilito nuevamente los botones
     document.querySelector(".borrar-btn").disabled = true;
     document.querySelector(".enviar-btn").disabled = true;
-})
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     const getAnimalData = () => {
         $.get("js/animales.json", (response) => {
-            detalleAnimal(response)
+            detalleAnimal(response);
         });
     };
 

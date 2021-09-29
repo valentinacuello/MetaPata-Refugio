@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MetaPata Refugio</title>
+    <link rel="icon" href="/img/favi.png" type="image/x-icon">
     <!--Tipografía-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +30,7 @@
             <a href="index.html" class="logo">
                 <img src="img/logo-refu.png" alt="Logotipo del refugio MetaPata">
             </a>
-            <button id="menu-toggle">
+            <button id="menu-toggle" aria-label="Menu toggle">
                 <span class="burger-menu" id="burgerMenu"></span>
             </button>
             <ul class="nav-links">
@@ -43,6 +44,13 @@
     <main class="detalle-container"> 
         <div class="header">
             <h3>Adopciones <span>¡Conocé a tu próximo mejor amigo!</span></h3>
+            <div class="breadcrumb-container">
+                <ul class="breadcrumb-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="adopciones.html">Adopciones</a></li>
+                    <li id="animalActual"></li>
+                </ul>
+            </div>
         </div>
         <section class="detalle-content">        
         </section>
@@ -67,10 +75,12 @@
                     <div class="direccion input-container">
                         <label for="direccion">Dirección</label>
                         <input type="text" name="direccion" placeholder="Ingresá tu dirección" id="direccion">
+                        <small class="feedback"></small>
                     </div>
                     <div class="barrio input-container">
                         <label for="barrio">Barrio / Zona</label>
                         <input type="text" name="barrio" placeholder="Ingresá tu barrio o zona" id="barrio">
+                        <small class="feedback"></small>
                     </div>
                     <div class="email input-container">
                         <label for="email">Email</label>
@@ -79,7 +89,7 @@
                     </div>
                     <div class="celular input-container">
                         <label for="telefono">Celular</label>
-                        <input type="number" name="celular" placeholder="Ingresá tu número de celular fijo o número de celular" id="celular">
+                        <input type="number" name="celular" placeholder="Ingresa tu celular" id="celular">
                         <small class="feedback">El celular solo puede contener 9 dígitos</small>
                     </div>
                 </fieldset>
@@ -90,7 +100,8 @@
             </form>
         </section>
     </main>
-    <div class="modal-adopcion-container">        
+    <div class="modal-container">      
+        <div class="spinner-border text-muted"></div>
         <div class="modal-box">
             <button class="cerrar-modal"><i class="bi bi-x-lg"></i></button>
             <img src="/img/adoption.svg">

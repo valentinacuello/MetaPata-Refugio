@@ -1,4 +1,4 @@
-@import 'components/navbar', 'components/footer', 'components/modal.scss', 'components/spinner.scss';
+@import 'components/navbar', 'components/footer', 'components/modal.scss', 'components/spinner.scss', 'components/breadcrumb.scss';
 @import 'views/index', 'views/adopciones.scss', 'views/animalDetalle.scss', 'views/donacion.scss', 'views/formularios.scss', 'views/contacto.scss';
 
 html{
@@ -37,4 +37,15 @@ input, select, textarea{
 
 textarea{
     padding-top: 1rem;
+}
+
+select{
+    background: url("/img/select-arrow.svg") no-repeat 95% 50%;
+    background-size: .6rem;
+
+    @include desktop(){
+        &{
+            background-position: 97% 50%;
+        }
+    }
 }

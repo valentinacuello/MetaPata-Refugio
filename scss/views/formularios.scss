@@ -62,23 +62,6 @@
 }
 
 
-
-.tarjetas{
-    &::after{
-        content: "\f107";
-        display: block;
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        color: $primary-color;
-        position: absolute;
-        bottom: 12%;
-        right: 1rem;
-        z-index: -1;
-        cursor: pointer;
-    }
-    
-}
-
 .form-btn {
     display: flex;
     margin-top: 2rem;
@@ -147,8 +130,14 @@
 
 .error {
     border: solid 2px #dc3545;
-    background: url("/img/error-mark.svg") no-repeat 95% 50%;
+    background: url("/img/error-mark.svg") no-repeat 95% 50% #fff;
     background-size: 1.2rem;
+
+    @include desktop(){
+        &{
+            background-position: 97% 50%;
+        }
+    }
 
     &:focus {
         border: solid 2px #dc3545;
@@ -158,8 +147,14 @@
 
 .valido {
     border: solid 2px #38b000;
-    background: url("/img/check-mark.svg") no-repeat 95% 50%;
+    background: url("/img/check-mark.svg") no-repeat 95% 50% #fff;
     background-size: 1.2rem;
+
+    @include desktop(){
+        &{
+            background-position: 97% 50%;
+        }
+    }
 
     &:focus {
         border: solid 2px #38b000;

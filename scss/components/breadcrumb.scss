@@ -1,0 +1,56 @@
+.breadcrumb-container{
+    width: 90%;
+    height: 55px;
+    position: absolute;
+    bottom: -10%;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: auto 0;
+
+    @include desktop(){
+        &{
+            width: 65%;
+            bottom: -25%;
+            background-color: transparent;
+        }
+    }
+
+    .breadcrumb-list{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li{
+            list-style: none;           
+        }
+
+        li, a{            
+            color: #000; 
+            font-size: .8rem;
+            cursor: pointer;
+        }
+
+        li:first-of-type::before{
+            content: "\f015";
+            color: #bcbcbc; 
+            font-size: .8rem;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin: 0 .5rem;
+        }
+
+        li:not(:first-of-type)::before{
+            content: "/";
+            color: #bcbcbc; 
+            font-size: .8rem;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin: 0 1rem;
+        }
+
+        li:last-of-type{
+            color: $primary-color;
+            font-weight: 500;
+        }
+    }
+}

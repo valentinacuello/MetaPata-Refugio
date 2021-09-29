@@ -2,7 +2,7 @@
     padding: 104px 0px 0px 0px;
 
     .header {
-        height: 40vh;
+        height: 30vh;
         background: url("/img/header-adopcion.jpg") no-repeat center;
         background-size: cover;
         display: flex;
@@ -10,16 +10,14 @@
         align-items: center;
         padding: 2rem;
         position: relative;
-        z-index: -1;
     
-        &::after {
+        &::before {
             content: "";
             display: block;
             width: 100%;
             height: 100%;
             background-color: rgba($color: rgba($color: $primary-color, $alpha: 0.7), $alpha: 0.5);
             position: absolute;
-            z-index: -1;
         }
     
     
@@ -34,6 +32,7 @@
         h3 {
             color: #fff;
             text-align: center;
+            z-index: 1;
     
             span {
                 display: block;
@@ -43,7 +42,8 @@
     }
     
     .detalle-content {
-        padding: 0 2rem;          
+        padding: 0 2rem; 
+        margin-top: 2rem;         
     
         .detalle-img {
             width: 100%;
@@ -120,6 +120,8 @@
             .info-body {
                 height: 450px;
                 padding-left: 2rem;
+                @include flexCenter(column, space-evenly);
+                align-items: flex-start;
             }
         }
     }

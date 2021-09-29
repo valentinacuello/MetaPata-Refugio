@@ -13,7 +13,7 @@
 
     .modal-box {
         width: 100%;
-        height: 450px;
+        height: 350px;
         background-color: #fff;
         padding: 1rem;
         border-radius: 4px;
@@ -23,9 +23,22 @@
         animation: modalTransition 0.5s ease;
         display: none;
 
+        .cerrar-modal{
+            position: absolute;
+            background-color: transparent;
+            border: none;
+            top: 5%;
+            right: 5%;
+            color: #8f8f8f;
+
+            &:hover{
+                color: #000;
+            }
+        }
+
         
         img{
-            height: 100px;
+            height: 85px;
         }
 
 
@@ -95,84 +108,6 @@
                 font-size: 1.2rem;
             }
         }
-
-        @keyframes modalTransition {
-            from {
-                transform: translateY(-100%);
-
-            }
-
-            to {
-                transform: translateY(0);
-
-            }
-        }
-    }
-}
-
-.modal-adopcion-container {
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 2rem;
-    position: fixed !important;
-    top: 0;
-    z-index: 1;
-    overflow-y: hidden;
-    display: none;
-
-    .modal-box {
-        width: 100%;
-        height: 350px;
-        background-color: #fff;
-        padding: 1rem;
-        border-radius: 4px;
-        border: solid 1x #fafafa;
-        @include flexCenter(column, space-evenly);
-        position: relative;
-        animation: modalTransition 0.5s ease;
-
-        .cerrar-modal{
-            position: absolute;
-            background-color: transparent;
-            border: none;
-            top: 5%;
-            right: 5%;
-            color: #8f8f8f;
-
-            &:hover{
-                color: #000;
-            }
-        }
-
-        img{
-            height: 100px;
-        }
-
-        h4 {
-            font-size: 1.4rem;
-            text-align: center;
-            margin: unset;
-        }
-
-        p {
-            font-weight: 500;
-            text-align: left;
-        }
-
-        @include desktop {
-            & {
-                width: 450px;
-                padding: 1rem 2rem;
-            }
-
-            h4 {
-                font-size: 1.5rem;
-            }
-        }
-
 
         @keyframes modalTransition {
             from {

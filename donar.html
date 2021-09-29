@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,7 +29,7 @@
             <a href="index.html" class="logo">
                 <img src="img/logo-refu.png" alt="Logotipo del refugio MetaPata">
             </a>
-            <button id="menu-toggle">
+            <button id="menu-toggle" aria-label="Menu toggle">
                 <span class="burger-menu" id="burgerMenu"></span>
             </button>
             <ul class="nav-links">
@@ -44,7 +43,13 @@
     <main class="donacion-container">
         <section class="donacion">
             <div class="donacion-header">
-                <h3 class="title">¡Tu ayuda es importante para nosotros!</h3>             
+                <h3 class="title">¡Tu ayuda es importante para nosotros!</h3>
+                <div class="breadcrumb-container">
+                    <ul class="breadcrumb-list">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li>Donaciones</li>
+                    </ul>
+                </div>             
             </div>
             <p class="msj-mision">Nuestro refugio es una organización sin fines de lucro que necesita del aporte solidario de sus
                 socios para su funcionamiento. Los costos de alimentación, atención veterinaria y de personal que
@@ -54,39 +59,39 @@
                     <fieldset class="metodo">
                         <p>Seleccioná el monto que te gustaría donar</p>
                         <input type="radio" name="tipo" value="Una vez" checked>
-                        <label for="">Una vez</label>
+                        <label for="tipo">Una vez</label>
                         <input type="radio" name="tipo" value="Mensual">
-                        <label for="">Mensual</label>
+                        <label for="tipo">Mensual</label>
                         <div class="monto">
                             <input type="radio" name="monto" value="250" checked>
-                            <label for="">$250</label>
+                            <label for="monto">$250</label>
                             <input type="radio" name="monto" value="500">
-                            <label for="">$500</label>
+                            <label for="monto">$500</label>
                             <input type="radio" name="monto" value="1000">
-                            <label for="">$1000</label>
+                            <label for="monto">$1000</label>
                             <input type="radio" name="monto" value="1500">
-                            <label for="">$1500</label>
+                            <label for="monto">$1500</label>
                         </div>
                     </fieldset>
                     <fieldset class="fieldset-group">
                         <p>Tus datos</p>
                         <div class="nombre input-container">
-                            <label for="">Nombre</label>
+                            <label for="nombre">Nombre</label>
                             <input type="text" placeholder="Ingresa tu nombre" name="nombre" id="nombre">
                             <small class="feedback">El nombre solo puede contener letras</small>
                         </div>
                         <div class="apellido input-container">
-                            <label for="">Apellido</label>
+                            <label for="apellido">Apellido</label>
                             <input type="text" placeholder="Ingresa tu apellido" name="apellido" id="apellido">
                             <small class="feedback">El apellido solo puede contener letras</small>
                         </div>
                         <div class="email input-container">
-                            <label for="">Email</label>
+                            <label for="email">Email</label>
                             <input type="email" placeholder="Ingresa tu email" name="email" id="email">
                             <small class="feedback">El email solo puede contener letras, números, puntos guiones medios y guiones bajos</small>
                         </div>
                         <div class="celular input-container">
-                            <label for="">Celular</label>
+                            <label for="celular">Celular</label>
                             <input type="number" placeholder="Ingresa tu celular" name="celular" id="celular"  maxlength="9">
                             <small class="feedback">El celular solo puede contener 9 dígitos</small>
                         </div>
@@ -94,7 +99,7 @@
                     <fieldset class="fieldset-group">
                         <p>Detalles del pago</p>
                         <div class="tarjetas input-container">
-                            <label for="">Medio de pago</label>
+                            <label for="tarjeta">Medio de pago</label>
                             <select name="tarjeta" id="tarjetasSelect">
                                 <option value="OCA" selected>OCA</option>
                                 <option value="Cabal">Cabal</option>
@@ -103,24 +108,24 @@
                             </select>
                         </div>
                         <div class="numTar input-container">
-                            <label for="">Número de tarjeta</label>
+                            <label for="numTar">Número de tarjeta</label>
                             <input type="number" placeholder="Ingresa el número de tarjeta" name="numTar" id="numTar"  maxlength="16">
-                            <small class="feedback">El número de tarjeta no es válido</small>
+                            <small class="feedback">El número de tarjeta no es válido. Recuerda el formato MM/AA</small>
                         </div>
                         <div class="vencimiento input-container">
-                            <label for="">Vencimiento</label>
+                            <label for="vencimiento">Vencimiento</label>
                             <input type="text" placeholder="MM/AA" name="vencimiento" id="vencimiento" maxlength="5">
                             <small class="feedback">La fecha de vencimiento no es válida, solo puede tener cuatro números</small>
                         </div>
                         <div class="cvv input-container">
-                            <label for="">CVV</label>
+                            <label for="cvv">CVV</label>
                             <input type="number" placeholder="CVV" name="cvv" id="cvv"  maxlength="3"> 
                             <small class="feedback">El código CVV no es válido</small>
                         </div>
                     </fieldset>
                     <div class="form-btn">
-                        <button type="button" class="borrar-btn" id="borrarBtn" disabled>Borrar</button>
-                        <button type="submit" class="finalizar-btn" id="finalizarBtn" disabled>Realizar donación</button>
+                        <button type="button" class="borrar-btn" id="borrarBtn" aria-label="Borrar" disabled>Borrar</button>
+                        <button type="submit" class="finalizar-btn" id="finalizarBtn" aria-label="Realizar donación" disabled>Realizar donación</button>
                     </div>
                 </form>
             </div>

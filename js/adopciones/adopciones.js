@@ -12,7 +12,7 @@ const cardAnimal = (array) => {
         htmlContentToAppend += `
             <div class="card">
                 <div class="card-img">
-                    <img src="img/Adopcion/${array[i].img}.jpg">
+                    <img src="img/Adopcion/${array[i].img}.jpg" alt="Foto de ${array[i].nombre}, ${array[i].especie} ${array[i].sexo} de ${array[i].edad} años">
                 </div>
                 <div class="card-body">
                     <h4>${array[i].nombre}</h4>
