@@ -94,7 +94,7 @@
                     </div>
                 </fieldset>
                 <div class="form-btn">
-                    <button type="button" class="borrar-btn" disabled>Borrar</button>
+                    <button type="button" class="borrar-btn" disabled id="borrarBtn">Borrar</button>
                     <button type="submit" class="enviar-btn" disabled>Enviar</button>
                 </div>
             </form>
@@ -117,8 +117,8 @@
             <h4>¿Borrar datos?</h4>
             <p>Si das aceptar, se borraran todos los datos que ya has ingresado.</p>
             <div class="btn-container">
-                <button class="cancelar-btn">Cancelar</button>
-                <button class="confirmar-btn">Confirmar</button>
+                <button class="cancelar-btn cancelar-borrar-btn">Cancelar</button>
+                <button class="confirmar-btn borrar-datos-btn">Confirmar</button>
             </div>
         </div>
     </div>
@@ -149,8 +149,7 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="js/index.js" type="module"></script>
-    <script src="js/adopciones/adopciones.js"></script>    
+    <script src="js/index.js" type="module"></script>   
     <script src="js/adopciones/animalDetalle.js"></script>
 
 </body>

@@ -146,9 +146,43 @@ const realizarDonacion = (tipo, monto, nombre, apellido, email, celular, tarjeta
 };
 
 
+//Eliminar clases de los inputs al resetar los inputs
+const eliminarClaseInput = () => {
+    nombre.classList.remove("valido");
+    apellido.classList.remove("valido");
+    email.classList.remove("valido");
+    celular.classList.remove("valido");
+    numeroTarjeta.classList.remove("valido");
+    vencimiento.classList.remove("valido");
+    cvv.classList.remove("valido");
+};
 
-document.getElementById("borrarBtn").addEventListener("click", borrarBoton);
+//Borrar datos del formulario modal
+document.querySelector(".borrar-btn").addEventListener("click", () => {
+    document.querySelector(".borrar-form").style.display = "flex";
+    document.querySelector(".msj-alerta").style.display = "flex";
+});
 
+//Confirmar borrar datos modal
+document.querySelector(".borrar-datos-btn").addEventListener("click", () => {
+    document.querySelector(".form-donacion").reset();
+
+    document.querySelector(".borrar-form").style.display = "none";
+    document.querySelector(".msj-alerta").style.display = "none";
+
+    eliminarClaseInput();
+
+    document.getElementById("borrarBtn").disabled = true;
+
+});
+
+//Cancelar borrar datos modal
+document.querySelector(".cancelar-borrar-btn").addEventListener("click", () => {
+    document.querySelector(".borrar-form").style.display = "none";
+    document.querySelector(".msj-alerta").style.display = "none";
+});
+
+//Submit del formulario de donación
 document.querySelector(".form-donacion").addEventListener("submit", (event) => {
     event.preventDefault();
 

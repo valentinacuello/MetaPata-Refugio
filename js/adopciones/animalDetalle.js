@@ -12,7 +12,7 @@ let celular = document.getElementById("celular");
 //Expresión
 let expresiones = {
     caracteresExp: /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/,
-    direccionExp: /^[a-zA-Z0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:\s[\]]*$/,
+    direccionExp: /^[a-zA-Z0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:\s[\]]{3,}$/,
     celularExp: /^([0-9]{9})$/,
     emailExp: /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/
 };
@@ -152,11 +152,43 @@ const enviarSolicitud = () => {
     }
 };
 
-document.querySelector(".borrar-btn").addEventListener("click", ()=>{
+//Eliminar clases de los inputs al resetar los inputs
+const eliminarClaseInput = () => {
+    nombre.classList.remove("valido");
+    apellido.classList.remove("valido");
+    direccion.classList.remove("valido");
+    barrio.classList.remove("valido");
+    email.classList.remove("valido");
+    celular.classList.remove("valido");
+};
+
+//Borrar datos del formulario modal
+document.querySelector(".borrar-btn").addEventListener("click", () => {
     document.querySelector(".borrar-form").style.display = "flex";
     document.querySelector(".msj-alerta").style.display = "flex";
 });
 
+//Confirmar borrar datos modal
+document.querySelector(".borrar-datos-btn").addEventListener("click", () => {
+    document.querySelector(".form-adopcion").reset();
+
+    document.querySelector(".borrar-form").style.display = "none";
+    document.querySelector(".msj-alerta").style.display = "none";
+
+    eliminarClaseInput();
+
+    document.getElementById("borrarBtn").disabled = true;
+
+});
+
+//Cancelar borrar datos modal
+document.querySelector(".cancelar-borrar-btn").addEventListener("click", () => {
+    document.querySelector(".borrar-form").style.display = "none";
+    document.querySelector(".msj-alerta").style.display = "none";
+});
+
+
+//Enviar formulario
 document.querySelector(".form-adopcion").addEventListener("submit", (event) => {
     event.preventDefault();
     document.querySelector(".modal-container").style.display = "flex";
@@ -170,24 +202,27 @@ document.querySelector(".form-adopcion").addEventListener("submit", (event) => {
 
 });
 
+//Cerrar Modal cuando se envia la solicitud de adopción
 
-document.querySelector(".cerrar-modal").addEventListener("click", () => {
-    document.querySelector(".modal-container").style.display = "none";
+document.querySelectorAll(".cerrar-modal").forEach((btnCerrar) => {
+    btnCerrar.addEventListener("click", () => {
+        let modals = document.querySelectorAll(".modal-container");
 
-    //Resetea el formulario
-    document.querySelector(".form-adopcion").reset();
+        modals.forEach((modal) => {
+            modal.style.display = "none";
+        });
 
-    nombre.classList.remove("valido");
-    apellido.classList.remove("valido");
-    direccion.classList.remove("valido");
-    barrio.classList.remove("valido");
-    email.classList.remove("valido");
-    celular.classList.remove("valido");
+        //Resetea el formulario
+        document.querySelector(".form-adopcion").reset();
 
-    //Deshabilito nuevamente los botones
-    document.querySelector(".borrar-btn").disabled = true;
-    document.querySelector(".enviar-btn").disabled = true;
+        eliminarClaseInput();
+
+        //Deshabilito nuevamente los botones
+        document.querySelector(".borrar-btn").disabled = true;
+        document.querySelector(".enviar-btn").disabled = true;
+    });
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const getAnimalData = () => {

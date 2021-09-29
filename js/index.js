@@ -13,10 +13,16 @@ const responsiveMenu = () => {
 responsiveMenu();
 
 
-document.getElementById("ctaBtn").onclick = function () {
-    location.href = "adopciones.html";
+//Para evitar errores en consola en otras páginas
+if (document.getElementById("ctaBtn")) {
+    document.getElementById("ctaBtn").onclick = function () {
+        location.href = "adopciones.html";
+    };
 };
 
-document.getElementById("donar-btn").onclick = function () {
-    location.href = "donar.html";
+//Para evitar errores en consola en otras páginas
+if (document.getElementById("donar-btn")) {
+    document.getElementById("donar-btn").onclick = function () {
+        location.href = "donar.html";
+    };
 };
