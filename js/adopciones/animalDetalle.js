@@ -201,6 +201,9 @@ document.querySelectorAll(".cerrar-modal").forEach((btnCerrar) => {
             modal.style.display = "none";
         });
 
+        document.querySelector(".form-adopcion").reset();
+        eliminarClaseInput();
+
     });
 });
 
