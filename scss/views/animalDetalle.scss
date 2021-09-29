@@ -114,14 +114,22 @@
     
     
             .detalle-img {
-                height: 450px;
+                height: 400px;
             }
     
             .info-body {
-                height: 450px;
+                height: 400px;
                 padding-left: 2rem;
                 @include flexCenter(column, space-evenly);
                 align-items: flex-start;
+
+                .titulo{
+                    .nombre {
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                        color: $primary-color;
+                    }
+                }
             }
         }
     }

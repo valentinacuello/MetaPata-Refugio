@@ -174,10 +174,14 @@ document.querySelector(".borrar-datos-btn").addEventListener("click", () => {
 
     document.querySelector(".borrar-form").style.display = "none";
     document.querySelector(".msj-alerta").style.display = "none";
-
+    
+    //Resetea el formulario
+    document.querySelector(".form-adopcion").reset();
     eliminarClaseInput();
 
-    document.getElementById("borrarBtn").disabled = true;
+    //Deshabilito nuevamente los botones
+    document.querySelector(".borrar-btn").disabled = true;
+    document.querySelector(".enviar-btn").disabled = true;
 
 });
 
@@ -185,6 +189,19 @@ document.querySelector(".borrar-datos-btn").addEventListener("click", () => {
 document.querySelector(".cancelar-borrar-btn").addEventListener("click", () => {
     document.querySelector(".borrar-form").style.display = "none";
     document.querySelector(".msj-alerta").style.display = "none";
+});
+
+
+//Cerrar Modal de error
+document.querySelectorAll(".cerrar-modal").forEach((btnCerrar) => {
+    btnCerrar.addEventListener("click", () => {
+        let modals = document.querySelectorAll(".modal-container");
+
+        modals.forEach((modal) => {
+            modal.style.display = "none";
+        });
+
+    });
 });
 
 
@@ -201,28 +218,6 @@ document.querySelector(".form-adopcion").addEventListener("submit", (event) => {
     }, 1500);
 
 });
-
-//Cerrar Modal cuando se envia la solicitud de adopción
-
-document.querySelectorAll(".cerrar-modal").forEach((btnCerrar) => {
-    btnCerrar.addEventListener("click", () => {
-        let modals = document.querySelectorAll(".modal-container");
-
-        modals.forEach((modal) => {
-            modal.style.display = "none";
-        });
-
-        //Resetea el formulario
-        document.querySelector(".form-adopcion").reset();
-
-        eliminarClaseInput();
-
-        //Deshabilito nuevamente los botones
-        document.querySelector(".borrar-btn").disabled = true;
-        document.querySelector(".enviar-btn").disabled = true;
-    });
-});
-
 
 document.addEventListener("DOMContentLoaded", () => {
     const getAnimalData = () => {

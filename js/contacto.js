@@ -48,7 +48,6 @@ const validarFormulario = (event) => {
             validarTextArea(textarea);
             break;
     };
-
 };
 
 
@@ -59,12 +58,13 @@ inputs.forEach((input) => {
 textAreaInput.addEventListener("keyup", validarFormulario);
 
 
+//Enviar mensaje de contacto
 document.querySelector(".form-contacto").addEventListener("submit", (event) => {
     event.preventDefault();
 
     if (nombre.value && email.value && textarea.value) {
         document.querySelector(".modal-container").style.display = "flex";
-        document.querySelector(".spinner-border").style.display = "block";
+        document.querySelector(".modal-box").style.display = "flex";
         document.querySelector(".error-contacto").classList.remove("error-activo");
 
     } else {
@@ -74,21 +74,16 @@ document.querySelector(".form-contacto").addEventListener("submit", (event) => {
         textarea.classList.add("error");
     }
 
-    setTimeout(() => {
-        document.querySelector(".spinner-border").style.display = "none";
-        document.querySelector(".modal-box").style.display = "flex";
-    }, 500);
-
 });
 
+//Cerrar modal
 document.querySelector(".cerrar-modal").addEventListener("click", () => {
     document.querySelector(".modal-box").style.display = "none";
     document.querySelector(".spinner-border").style.display = "block";
+
     //Resetea el formulario
     setTimeout(() => {
         document.querySelector(".modal-container").style.display = "none";
         document.querySelector(".form-contacto").reset();
-    }, 200);
-
-
+    }, 500);
 });

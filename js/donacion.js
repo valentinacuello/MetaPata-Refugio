@@ -182,6 +182,19 @@ document.querySelector(".cancelar-borrar-btn").addEventListener("click", () => {
     document.querySelector(".msj-alerta").style.display = "none";
 });
 
+
+//Cerrar Modal de error
+document.querySelectorAll(".cerrar-modal").forEach((btnCerrar) => {
+    btnCerrar.addEventListener("click", () => {
+        let modals = document.querySelectorAll(".modal-container");
+
+        modals.forEach((modal) => {
+            modal.style.display = "none";
+        });
+    });
+});
+
+
 //Submit del formulario de donación
 document.querySelector(".form-donacion").addEventListener("submit", (event) => {
     event.preventDefault();

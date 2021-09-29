@@ -263,7 +263,7 @@ footer {
         color: #ffff; }
     @media (min-width: 1024px) {
       .modal-container .modal-box {
-        width: 450px;
+        width: 370px;
         padding: 1rem 2rem; }
       .modal-container .modal-box h4 {
         font-size: 1.5rem; } }
@@ -858,15 +858,19 @@ footer {
         align-items: center;
         margin: 3rem 0px; }
       .detalle-container .detalle-content .detalle-img {
-        height: 450px; }
+        height: 400px; }
       .detalle-container .detalle-content .info-body {
-        height: 450px;
+        height: 400px;
         padding-left: 2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        align-items: flex-start; } }
+        align-items: flex-start; }
+        .detalle-container .detalle-content .info-body .titulo .nombre {
+          font-size: 1.6rem;
+          font-weight: 600;
+          color: #17C3B2; } }
 
 .form-adopcion-container {
   margin-top: 2rem;
