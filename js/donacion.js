@@ -17,7 +17,6 @@ let expresiones = {
     caracteresExp: /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/,
     celularExp: /^([0-9]{9})$/,
     emailExp: /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
-    // correoExp: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     numeroTarjetaExp: /^([0-9]{16})$/,
     vencimientoTarjetaExp: /^([\/0-9]{2})\/([\/0-9]{2})$/,
     cvvTarjetaExp: /^([0-9]{3})$/

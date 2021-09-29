@@ -27,11 +27,11 @@ const detalleAnimal = (animalDetalles) => {
 
         if (nameURL == animalDetalles[i].nombre) {
             htmlContentToAppend = `
-                <img src="/img/Adopcion/${animalDetalles[i].img}.jpg" class="detalle-img" alt="Foto de ${animalDetalles[i].nombre}, ${animalDetalles[i].especie} ${animalDetalles[i].sexo} de ${animalDetalles[i].edad} años"> 
+                <img src="../img/Adopcion/${animalDetalles[i].img}.jpg" class="detalle-img" alt="Foto de ${animalDetalles[i].nombre}, ${animalDetalles[i].especie} ${animalDetalles[i].sexo} de ${animalDetalles[i].edad} años"> 
                 <div class="info-body">
                     <div class="titulo">
                         <h1 class="nombre">¡Hola! Soy ${animalDetalles[i].nombre}</h1>
-                        <img src="/img/seperador.svg" class="separador">
+                        <img src="../img/seperador.svg" class="separador">
                     </div>
                     <div class="detalles">
                         <div class="edad">
@@ -152,7 +152,10 @@ const enviarSolicitud = () => {
     }
 };
 
-document.querySelector(".borrar-btn").addEventListener("click", borrarBtn);
+document.querySelector(".borrar-btn").addEventListener("click", ()=>{
+    document.querySelector(".borrar-form").style.display = "flex";
+    document.querySelector(".msj-alerta").style.display = "flex";
+});
 
 document.querySelector(".form-adopcion").addEventListener("submit", (event) => {
     event.preventDefault();

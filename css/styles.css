@@ -211,11 +211,11 @@ footer {
   display: none; }
   .modal-container .modal-box {
     width: 100%;
-    height: 350px;
+    height: 300px;
     background-color: #fff;
     padding: 1rem;
     border-radius: 4px;
-    border: solid 1x #fafafa;
+    border: solid 1px #fafafa;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -233,14 +233,14 @@ footer {
       .modal-container .modal-box .cerrar-modal:hover {
         color: #000; }
     .modal-container .modal-box img {
-      height: 85px; }
+      height: 65px; }
     .modal-container .modal-box h4 {
       font-size: 1.2rem;
       text-align: center;
-      margin-bottom: 1.4rem; }
+      margin: 1rem 0; }
     .modal-container .modal-box p {
       font-weight: 500;
-      text-align: left; }
+      text-align: center; }
       .modal-container .modal-box p span {
         color: #F79256; }
     .modal-container .modal-box .btn-container {
@@ -275,7 +275,7 @@ footer {
       width: 100%;
       margin-right: 0; }
       .modal-container .modal-box .detalle-modal p {
-        font-size: 1.2rem; }
+        font-size: 1rem; }
 
 @keyframes modalTransition {
   from {
@@ -344,7 +344,7 @@ footer {
   border: solid 2px green; }
 
 .home-section {
-  height: 100vh;
+  height: calc(100vh - 104px);
   background: url("../img/hero-img-mobile.png") center no-repeat;
   background-size: cover;
   display: flex;
@@ -441,10 +441,12 @@ footer {
 /*Home About*/
 .about-section {
   width: 100%;
-  padding: 0 2rem; }
+  padding: 0 2rem;
+  margin-top: 2rem; }
   @media (min-width: 1024px) {
     .about-section {
-      padding: 4rem 19rem; } }
+      padding: 4rem 19rem;
+      margin-top: unset; } }
   .about-section .header {
     transform: translateY(-40px);
     transition: transform 1s ease-in-out;
@@ -518,11 +520,9 @@ footer {
       text-align: center; }
     .ayuda-section .header .separador {
       margin-bottom: 1rem; }
-    .ayuda-section .header p {
-      width: 80%; }
-      @media (min-width: 1024px) {
-        .ayuda-section .header p {
-          width: 70%; } }
+    @media (min-width: 1024px) {
+      .ayuda-section .header p {
+        width: 70%; } }
   @media (min-width: 1024px) {
     .ayuda-section .formas-ayuda {
       display: flex;
@@ -578,7 +578,7 @@ footer {
   padding: 104px 0px 0px 0px; }
   .adopciones-container .header {
     height: 30vh;
-    background: url("/img/header-adopcion.jpg") no-repeat center;
+    background: url("../img/header-adopcion.jpg") no-repeat center;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -782,7 +782,7 @@ footer {
   padding: 104px 0px 0px 0px; }
   .detalle-container .header {
     height: 30vh;
-    background: url("/img/header-adopcion.jpg") no-repeat center;
+    background: url("../img/header-adopcion.jpg") no-repeat center;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -899,7 +899,7 @@ footer {
     justify-content: center;
     margin-bottom: 2rem;
     height: 30vh;
-    background: url("/img/donacion-header.jpg") no-repeat center;
+    background: url("../img/donacion-header.jpg") no-repeat center;
     background-size: cover;
     position: relative; }
     .donacion-container .donacion .donacion-header h3 {
@@ -1032,10 +1032,13 @@ footer {
     font-size: .7rem; }
 
 .form-btn {
+  width: 100%;
   display: flex;
-  margin-top: 2rem; }
+  justify-content: flex-end;
+  margin-top: 2rem;
+  margin-left: auto; }
   .form-btn .borrar-btn {
-    width: 40%;
+    width: 150px;
     height: 48px;
     border: solid 1px #a8a8a8;
     background-color: #fff;
@@ -1076,6 +1079,16 @@ footer {
       background-color: #6e6e6e; }
   .form-btn .enviar-btn {
     margin-left: unset; }
+  @media (max-width: 320px) {
+    .form-btn .borrar-btn,
+    .form-btn .enviar-btn,
+    .form-btn .finalizar-btn {
+      font-size: .9rem;
+      padding: unset; } }
+  @media (min-width: 1024px) {
+    .form-btn .enviar-btn,
+    .form-btn .finalizar-btn {
+      width: 200px; } }
 
 .error {
   border: solid 2px #dc3545;
@@ -1110,7 +1123,7 @@ main .contacto {
   position: relative; }
   main .contacto .contacto-header {
     height: 30vh;
-    background: url("/img/contacto-header.jpg") no-repeat center;
+    background: url("../img/contacto-header.jpg") no-repeat center;
     background-size: cover;
     display: flex;
     flex-direction: column;

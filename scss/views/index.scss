@@ -1,8 +1,8 @@
 @import 'base', 'utilities';
 
 
-.home-section{
-    height: 100vh;
+.home-section{    
+    height: calc(100vh - 104px);
     background: url('../img/hero-img-mobile.png') center no-repeat;
     background-size: cover;
     display: flex;
@@ -128,10 +128,12 @@
 .about-section{
     width: 100%;
     padding: 0 2rem;
+    margin-top: 2rem;
 
     @include desktop(){
         &{
             padding: 4rem 19rem;
+            margin-top: unset;
         }
     }
 
@@ -238,7 +240,6 @@
         }
 
         p{
-            width: 80%;
 
             @include desktop(){
                 &{                   

@@ -63,11 +63,13 @@
 
 
 .form-btn {
+    width: 100%;
     display: flex;
+    justify-content: flex-end;
     margin-top: 2rem;
-    
+    margin-left: auto;
     .borrar-btn {
-        width: 40%;
+        width: 150px;
         height: 48px;
         border: solid 1px #a8a8a8;
         background-color: #fff;
@@ -120,6 +122,21 @@
         margin-left: unset;
     }
 
+    @include mobile{
+        .borrar-btn,
+        .enviar-btn,
+        .finalizar-btn{
+            font-size: .9rem;
+            padding: unset;
+        }
+    }
+
+    @include desktop{        
+        .enviar-btn,
+        .finalizar-btn{
+            width: 200px;
+        }
+    }
 }
 
 
