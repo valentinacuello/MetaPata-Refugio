@@ -1,3 +1,3 @@
 # MetaPata-Refugio
 
-https://meta-pata-refugio.vercel.app
+https://metapatarefugio.vercel.app/
