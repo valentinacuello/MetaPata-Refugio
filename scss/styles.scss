@@ -40,7 +40,7 @@ textarea{
 }
 
 select{
-    background: url("/img/select-arrow.svg") no-repeat 95% 50%;
+    background: url("../img/select-arrow.svg") no-repeat 95% 50%;
     background-size: .6rem;
 
     @include desktop(){
