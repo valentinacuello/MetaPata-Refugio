@@ -13,7 +13,7 @@ let celular = document.getElementById("celular");
 let expresiones = {
     caracteresExp: /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/,
     direccionExp: /^[a-zA-Z0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:\s[\]]{3,}$/,
-    celularExp: /^([0-9]{9})$/,
+    celularExp: /^(?:(0\d{1})|\d{1})[9]\d{7}$/,
     emailExp: /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/
 };
 
