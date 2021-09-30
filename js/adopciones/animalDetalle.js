@@ -110,30 +110,6 @@ inputs.forEach((input) => {
     input.addEventListener("keyup", validarFormulario);
 });
 
-//Limpiar campos form
-const borrarBtn = () => {
-
-    document.querySelector(".form-adopcion").reset();
-
-    nombre.classList.remove("valido");
-    apellido.classList.remove("valido");
-    direccion.classList.remove("valido");
-    barrio.classList.remove("valido");
-    email.classList.remove("valido");
-    celular.classList.remove("valido");
-
-    nombre.classList.remove("error");
-    apellido.classList.remove("error");
-    direccion.classList.remove("error");
-    barrio.classList.remove("error");
-    email.classList.remove("error");
-    celular.classList.remove("error");
-
-    document.querySelectorAll(".feedback").forEach((feedback) => {
-        feedback.classList.remove("invalido-feedback");
-    });
-};
-
 //Finalizar solicitud
 const enviarSolicitud = () => {
     let enviarBtn = document.querySelector(".enviar-btn");
@@ -160,6 +136,13 @@ const eliminarClaseInput = () => {
     barrio.classList.remove("valido");
     email.classList.remove("valido");
     celular.classList.remove("valido");
+
+    nombre.classList.remove("error");
+    apellido.classList.remove("error");
+    direccion.classList.remove("error");
+    barrio.classList.remove("error");
+    email.classList.remove("error");
+    celular.classList.remove("error");
 };
 
 //Borrar datos del formulario modal

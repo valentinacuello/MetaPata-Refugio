@@ -19,10 +19,11 @@ let expresiones = {
     celularExp: /^(?:(0\d{1})|\d{1})[9]\d{7}$/,
     emailExp: /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
     numeroTarjetaExp: /^([0-9]{16})$/,
-    vencimientoTarjetaExp: /^([\/0-9]{2})\/([\/0-9]{2})$/,
+    vencimientoTarjetaExp: /^([0-9]{2})\/([0-9]{2})$/,
     cvvTarjetaExp: /^([0-9]{3})$/
 };
 
+/^(?:(0\d{1})|\d{1})[9]\d{7}$/
 
 const validarInput = (input, expresion) => {
 
@@ -93,7 +94,7 @@ const finalizarBoton = () => {
 };
 
 
-const borrarBoton = (input) => {
+const borrarBoton = () => {
     document.querySelector(".form-donacion").reset();
 
     nombre.classList.remove("error");
@@ -156,6 +157,14 @@ const eliminarClaseInput = () => {
     numeroTarjeta.classList.remove("valido");
     vencimiento.classList.remove("valido");
     cvv.classList.remove("valido");
+    
+    nombre.classList.remove("error");
+    apellido.classList.remove("error");
+    email.classList.remove("error");
+    celular.classList.remove("error");
+    numeroTarjeta.classList.remove("error");
+    vencimiento.classList.remove("error");
+    cvv.classList.remove("error");
 };
 
 //Borrar datos del formulario modal
