@@ -69,7 +69,7 @@ const detalleAnimal = (animalDetalles) => {
 //Validar form Adopción
 const validarInput = (input, expresion) => {
 
-    if (!expresion.test(input.value)) {
+    if (!expresion.test(input.value.replace(/\s+/g, ''))) {
         input.classList.add("error");
         input.classList.remove("valido");
         document.querySelector(`.${input.name} .feedback`).classList.add("invalido-feedback");
