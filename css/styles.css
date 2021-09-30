@@ -1096,7 +1096,7 @@ footer {
 
 .error {
   border: solid 2px #dc3545;
-  background: url("/img/error-mark.svg") no-repeat 95% 50% #fff;
+  background: url("../img/error-mark.svg") no-repeat 95% 50% #fff;
   background-size: 1.2rem; }
   @media (min-width: 1024px) {
     .error {
@@ -1107,7 +1107,7 @@ footer {
 
 .valido {
   border: solid 2px #38b000;
-  background: url("/img/check-mark.svg") no-repeat 95% 50% #fff;
+  background: url("../img/check-mark.svg") no-repeat 95% 50% #fff;
   background-size: 1.2rem; }
   @media (min-width: 1024px) {
     .valido {

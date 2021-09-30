@@ -6,6 +6,7 @@ let nombre = document.getElementById("nombre");
 let apellido = document.getElementById("apellido");
 let email = document.getElementById("email");
 let celular = document.getElementById("celular");
+
 //Datos tarjeta
 let numeroTarjeta = document.getElementById("numTar");
 let vencimiento = document.getElementById("vencimiento");
