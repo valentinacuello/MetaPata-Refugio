@@ -197,7 +197,10 @@ document.querySelector(".form-adopcion").addEventListener("submit", (event) => {
 
     setTimeout(() => {
         document.querySelector(".spinner-border").style.display = "none";
-        document.querySelector(".modal-box").style.display = "flex";
+        document.querySelector(".modal-box").style.display = "flex";        
+
+        document.querySelector(".form-adopcion").reset();
+        eliminarClaseInput();
     }, 1500);
 
 });
