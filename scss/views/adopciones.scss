@@ -51,8 +51,8 @@
 
         @include desktop(){
             display: grid;
-            grid-template-columns: 20% 80%;
-            grid-gap: 2rem;
+            grid-template-columns: 1fr 4fr;
+            grid-gap: 3rem;
             padding: 0px 10rem;
             margin-top: 5rem
         }
