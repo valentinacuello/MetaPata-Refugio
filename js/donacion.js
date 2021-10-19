@@ -28,11 +28,11 @@ let expresiones = {
 const validarInput = (input, expresion) => {
 
     if (!expresion.test(input.value.replace(/\s+/g, ''))) {
-        input.classList.add("error");
+        input.classList.add("invalido");
         input.classList.remove("valido");
         document.querySelector(`.${input.name} .feedback`).classList.add("invalido-feedback");
     } else {
-        input.classList.remove("error");
+        input.classList.remove("invalido");
         input.classList.add("valido");
         document.querySelector(`.${input.name} .feedback`).classList.remove("invalido-feedback");
     }
@@ -97,13 +97,13 @@ const finalizarBoton = () => {
 const borrarBoton = () => {
     document.querySelector(".form-donacion").reset();
 
-    nombre.classList.remove("error");
-    apellido.classList.remove("error");
-    email.classList.remove("error");
-    celular.classList.remove("error");
-    numeroTarjeta.classList.remove("error");
-    vencimiento.classList.remove("error");
-    cvv.classList.remove("error");
+    nombre.classList.remove("invalido");
+    apellido.classList.remove("invalido");
+    email.classList.remove("invalido");
+    celular.classList.remove("invalido");
+    numeroTarjeta.classList.remove("invalido");
+    vencimiento.classList.remove("invalido");
+    cvv.classList.remove("invalido");
 
     nombre.classList.remove("valido");
     apellido.classList.remove("valido");
@@ -158,13 +158,13 @@ const eliminarClaseInput = () => {
     vencimiento.classList.remove("valido");
     cvv.classList.remove("valido");
     
-    nombre.classList.remove("error");
-    apellido.classList.remove("error");
-    email.classList.remove("error");
-    celular.classList.remove("error");
-    numeroTarjeta.classList.remove("error");
-    vencimiento.classList.remove("error");
-    cvv.classList.remove("error");
+    nombre.classList.remove("invalido");
+    apellido.classList.remove("invalido");
+    email.classList.remove("invalido");
+    celular.classList.remove("invalido");
+    numeroTarjeta.classList.remove("invalido");
+    vencimiento.classList.remove("invalido");
+    cvv.classList.remove("invalido");
 };
 
 //Borrar datos del formulario modal

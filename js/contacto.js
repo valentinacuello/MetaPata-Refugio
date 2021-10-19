@@ -17,9 +17,9 @@ let expresiones = {
 const validarInput = (input, expresion) => {
 
     if (!expresion.test(input.value)) {
-        input.classList.add("error");
+        input.classList.add("invalido");
     } else {
-        input.classList.remove("error");
+        input.classList.remove("invalido");
     }
 
 };
@@ -27,9 +27,9 @@ const validarInput = (input, expresion) => {
 const validarTextArea = (input) => {
 
     if (input.value) {
-        input.classList.remove("error");
+        input.classList.remove("invalido");
     } else {
-        input.classList.add("error");
+        input.classList.add("invalido");
     }
 
 };
@@ -69,9 +69,9 @@ document.querySelector(".form-contacto").addEventListener("submit", (event) => {
 
     } else {
         document.querySelector(".error-contacto").classList.add("error-activo");
-        nombre.classList.add("error");
-        email.classList.add("error");
-        textarea.classList.add("error");
+        nombre.classList.add("invalido");
+        email.classList.add("invalido");
+        textarea.classList.add("invalido");
     }
 
 });

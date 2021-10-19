@@ -70,11 +70,11 @@ const detalleAnimal = (animalDetalles) => {
 const validarInput = (input, expresion) => {
 
     if (!expresion.test(input.value.replace(/\s+/g, ''))) {
-        input.classList.add("error");
+        input.classList.add("invalido");
         input.classList.remove("valido");
         document.querySelector(`.${input.name} .feedback`).classList.add("invalido-feedback");
     } else {
-        input.classList.remove("error");
+        input.classList.remove("invalido");
         input.classList.add("valido");
         document.querySelector(`.${input.name} .feedback`).classList.remove("invalido-feedback");
     }
@@ -137,12 +137,12 @@ const eliminarClaseInput = () => {
     email.classList.remove("valido");
     celular.classList.remove("valido");
 
-    nombre.classList.remove("error");
-    apellido.classList.remove("error");
-    direccion.classList.remove("error");
-    barrio.classList.remove("error");
-    email.classList.remove("error");
-    celular.classList.remove("error");
+    nombre.classList.remove("invalido");
+    apellido.classList.remove("invalido");
+    direccion.classList.remove("invalido");
+    barrio.classList.remove("invalido");
+    email.classList.remove("invalido");
+    celular.classList.remove("invalido");
 };
 
 //Borrar datos del formulario modal
@@ -175,7 +175,7 @@ document.querySelector(".cancelar-borrar-btn").addEventListener("click", () => {
 });
 
 
-//Cerrar Modal de error
+//Cerrar Modal de invalido
 document.querySelectorAll(".cerrar-modal").forEach((btnCerrar) => {
     btnCerrar.addEventListener("click", () => {
         let modals = document.querySelectorAll(".modal-container");
